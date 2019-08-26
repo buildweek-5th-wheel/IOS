@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+struct User: Codable {
+    var id: String?
+    let username: String
+    var password: String
+    var landowner: Bool
+    var imageURL: String?
+    var bio: String?
+    
+    init(username: String, password: String, landowner: Bool) {
+        self.username = username
+        self.password = password
+        self.landowner = landowner
+    }
+}
