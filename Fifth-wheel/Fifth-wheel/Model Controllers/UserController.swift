@@ -14,8 +14,14 @@ import Foundation
 class UserController {
     var users:              [User] = []
     var userAPIController = UserAPIController()
+    var currentUser: User?
     
     init () {
 
+    }
+    
+    func loginUser(user: User) -> Bool {
+        return true
+        //userAPIController.loginUser()
     }
 }
