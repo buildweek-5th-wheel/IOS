@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+// MARK: - Constants & Variables
+
+struct User: Codable {
+    let id:         UInt
+    let username:   String
+    var landowner:  Bool
+    var imageURL:   String
+    var bio:        String
+    
+    mutating func toggleLandowner() {
+        self.landowner = !self.landowner
+    }
+}
