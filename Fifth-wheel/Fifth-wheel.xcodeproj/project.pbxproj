@@ -16,6 +16,7 @@
 		E03343EC23141C6C0051518B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343EB23141C6C0051518B /* RegistrationViewController.swift */; };
 		E03343EE23144C6C0051518B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343ED23144C6B0051518B /* User.swift */; };
 		F655289C231485D3002C2B1C /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289B231485D3002C2B1C /* Listing.swift */; };
+		F655289E231487C3002C2B1C /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289D231487C3002C2B1C /* UserController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E03343EB23141C6C0051518B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		E03343ED23144C6B0051518B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F655289B231485D3002C2B1C /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
+		F655289D231487C3002C2B1C /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = "Fifth-wheel/Models/UserController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		E03343E32311AAA10051518B /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F655289D231487C3002C2B1C /* UserController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				E03343D023119FF60051518B /* BaseViewController.swift in Sources */,
 				E03343EC23141C6C0051518B /* RegistrationViewController.swift in Sources */,
 				E03343EE23144C6C0051518B /* User.swift in Sources */,
+				F655289E231487C3002C2B1C /* UserController.swift in Sources */,
 				F655289C231485D3002C2B1C /* Listing.swift in Sources */,
 				E03343CE23119FF60051518B /* AppDelegate.swift in Sources */,
 			);
