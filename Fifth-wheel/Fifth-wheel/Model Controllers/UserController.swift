@@ -12,10 +12,10 @@ import Foundation
 // MARK: - Object/Method definitions
 
 class UserController {
-    var users:              [User]
+    var users:              [User] = []
     var userAPIController = UserAPIController()
     
     init () {
-        
+
     }
 }
