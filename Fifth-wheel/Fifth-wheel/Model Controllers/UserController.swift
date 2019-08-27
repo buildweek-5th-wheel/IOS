@@ -25,7 +25,8 @@ class UserController {
     
     func loginUser(user: User) -> Bool {
         currentUser = userAPIController.loginUser(user: user)
-        if let _ = currentUser {
+        if let currentUser = currentUser {
+            self.currentUser = currentUser
             return true
         } else {
             return false
@@ -34,7 +35,8 @@ class UserController {
     
     func registerUser (user: User) -> Bool {
         currentUser = userAPIController.registerUser(user: user)
-        if let _ = currentUser {
+        if let currentUser = currentUser {
+            self.currentUser = currentUser
             return true
         } else {
             return false

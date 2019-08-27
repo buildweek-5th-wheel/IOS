@@ -11,7 +11,7 @@ import Foundation
 // MARK: - Constants & Variables
 
 struct User: Codable {
-    let id:         UInt? = nil
+    var id:         UInt? = nil
     var authToken:  String? = nil
     let username:   String
     let password:   String
