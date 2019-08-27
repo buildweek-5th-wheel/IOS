@@ -6,8 +6,11 @@
 //  Copyright © 2019 Lambda. All rights reserved.
 //
 
-// MARK: - Constants & Variables
 import Foundation
+
+// MARK: - Constants & Variables
+
+var userController = UserController()
 
 // MARK: - Object/Method definitions
 
@@ -21,7 +24,22 @@ class UserController {
     }
     
     func loginUser(user: User) -> Bool {
-        return true
-        //userAPIController.loginUser()
+        currentUser = userAPIController.loginUser(user: user)
+        if let currentUser = currentUser {
+            self.currentUser = currentUser
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func registerUser (user: User) -> Bool {
+        currentUser = userAPIController.registerUser(user: user)
+        if let currentUser = currentUser {
+            self.currentUser = currentUser
+            return true
+        } else {
+            return false
+        }
     }
 }
