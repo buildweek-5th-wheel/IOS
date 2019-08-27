@@ -17,6 +17,7 @@ enum NetworkError: Error {
     case badURL
     case invalidData
     case failedSignUp(Error)
+    case otherError(Error)
 }
 enum AppError: Error {
     case noData

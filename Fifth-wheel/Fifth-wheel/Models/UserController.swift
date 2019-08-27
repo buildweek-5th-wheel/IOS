@@ -10,9 +10,10 @@ import Foundation
 
 class UserController {
     
-//Properties
+    //Properties
     var loggedInUser: User?
     var userListings: [Listing] = []
+    var users: [User] = []
     
     private var userInfo: URL? {
         let fileManager = FileManager.default
@@ -88,7 +89,7 @@ extension UserController {
                 return
             }
             completion(nil)
-        }.resume()
+            }.resume()
     }
     //Get Token
     func signIn(with user: User, completion: @escaping (Error?) -> Void) {
@@ -124,6 +125,46 @@ extension UserController {
                 return
             }
             completion(nil)
+            }.resume()
+    }
+}
+
+//MARK: - Network Route Calls
+extension UserController {
+    
+    func getAllUsers(completion: @escaping (NetworkError?) -> Void) {
+        guard let token = loggedInUser?.token else {
+            completion(.badAuth)
+            return
+        }
+        let allUsersUrl = baseURL.appendingPathComponent("users")
+        var request = URLRequest(url: allUsersUrl)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.addValue("\(token)", forHTTPHeaderField: "token")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(.otherError(NSError()))
+                return
+            }
+            if let error = error {
+                completion(.otherError(error))
+                return
+            }
+            guard let data = data else {
+                completion(.noData)
+                return
+            }
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                self.users = try decoder.decode([User].self, from: data)
+                completion(nil)
+            } catch {
+                completion(.otherError(error))
+                return
+            }
         }.resume()
     }
 }
