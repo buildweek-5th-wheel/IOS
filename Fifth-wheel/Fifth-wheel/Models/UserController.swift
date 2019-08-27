@@ -13,11 +13,14 @@ class UserController {
     //Properties
     var loggedInUser: User?
     
+    
     private var userInfo: URL? {
         let fileManager = FileManager.default
         guard let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else    { return nil }
         return documentsDirectory.appendingPathComponent("fillout.plist")
     }
+    
+    
 }
 
 // MARK: -CRUD
@@ -53,5 +56,38 @@ extension UserController {
         } catch {
             NSLog("Error user data: \(error) ")
         }
+    }
+}
+
+
+//Network Login and Signup
+extension UserController {
+    
+    func signUp(with user: User, completion: @escaping (Error?) -> Void) {
+        let appendedURL = baseURL.appendingPathComponent("auth/register")
+        var request = URLRequest(url: appendedURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let data = try JSONEncoder().encode(user)
+            request.httpBody = data
+        } catch {
+            NSLog("\(<#Controller#>) location: Error encoding user info: \(error)")
+            completion(error)
+            return
+        }
+        URLSession.shared.dataTask(with: request) { (_, response, error) in
+            
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(NetworkError.failedSignUp(NSError(domain: baseURL.absoluteString, code: response.statusCode, userInfo: nil)))
+                return
+            }
+            if let error = error {
+                completion(error)
+                return
+            }
+            completion(nil)
+            }.resume()
     }
 }
