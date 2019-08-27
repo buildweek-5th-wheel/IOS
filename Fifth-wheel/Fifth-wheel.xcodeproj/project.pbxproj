@@ -23,6 +23,7 @@
 		E04F21C12314615600FB96B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C02314615600FB96B2 /* Constants.swift */; };
 		E04F21C323148C8300FB96B2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C223148C8300FB96B2 /* AccountViewController.swift */; };
 		E04F21C523148CAC00FB96B2 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C423148CAC00FB96B2 /* ListingsViewController.swift */; };
+		E835A6772314A80200A39B6F /* couture-bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = E835A6762314A7F100A39B6F /* couture-bld.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E04F21C02314615600FB96B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E04F21C223148C8300FB96B2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E04F21C423148CAC00FB96B2 /* ListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
+		E835A6762314A7F100A39B6F /* couture-bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "couture-bld.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				E03343CC23119FF60051518B /* Fifth-wheel */,
+				E835A6762314A7F100A39B6F /* couture-bld.otf */,
 				E03343CB23119FF60051518B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E835A6772314A80200A39B6F /* couture-bld.otf in Resources */,
 				E03343D823119FF70051518B /* LaunchScreen.storyboard in Resources */,
 				E03343D523119FF70051518B /* Assets.xcassets in Resources */,
 				E03343D323119FF60051518B /* Main.storyboard in Resources */,
