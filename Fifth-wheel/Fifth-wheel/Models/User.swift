@@ -16,6 +16,7 @@ struct User: Codable {
     var imageURL: String?
     var bio: String?
     var token: Bearer?
+    var listings: [Listing]?
     
     init(username: String, password: String, landowner: Bool) {
         self.username = username

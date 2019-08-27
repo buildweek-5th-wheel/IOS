@@ -10,9 +10,9 @@ import Foundation
 
 class UserController {
     
-    //Properties
+//Properties
     var loggedInUser: User?
-    
+    var userListings: [Listing] = []
     
     private var userInfo: URL? {
         let fileManager = FileManager.default
@@ -60,7 +60,7 @@ extension UserController {
 }
 
 
-//Network Login and Signup
+//MARK: - Network Login and Signup
 extension UserController {
     
     func signUp(with user: User, completion: @escaping (Error?) -> Void) {
@@ -90,9 +90,9 @@ extension UserController {
             completion(nil)
         }.resume()
     }
-    
+    //Get Token
     func signIn(with user: User, completion: @escaping (Error?) -> Void) {
-        let appendedURL = baseURL.appendingPathComponent("users/login")
+        let appendedURL = baseURL.appendingPathComponent("auth/login")
         var request = URLRequest(url: appendedURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -117,6 +117,7 @@ extension UserController {
             guard let data = data else { completion(NetworkError.invalidData); return}
             do {
                 self.loggedInUser?.token = try JSONDecoder().decode(Bearer.self, from: data)
+                self.saveUser()
             } catch {
                 NSLog("UserController: Error decoding bearer token: \(error)")
                 completion(NetworkError.noDecode)
