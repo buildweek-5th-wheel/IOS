@@ -34,9 +34,9 @@ extension UserController {
     
     func updateUser(password: String?, landowner: Bool?, bio: String?, image: String?) {
         guard let password = password,
-        let landowner = landowner,
-        let bio = bio,
-        let image = image else {return}
+            let landowner = landowner,
+            let bio = bio,
+            let image = image else {return}
         loggedInUser?.password = password
         loggedInUser?.bio = bio
         loggedInUser?.landowner = landowner
@@ -72,7 +72,7 @@ extension UserController {
             let data = try JSONEncoder().encode(user)
             request.httpBody = data
         } catch {
-            NSLog("\(<#Controller#>) location: Error encoding user info: \(error)")
+            NSLog("UserController: Error encoding user info: \(error)")
             completion(error)
             return
         }
@@ -88,6 +88,42 @@ extension UserController {
                 return
             }
             completion(nil)
-            }.resume()
+        }.resume()
+    }
+    
+    func signIn(with user: User, completion: @escaping (Error?) -> Void) {
+        let appendedURL = baseURL.appendingPathComponent("users/login")
+        var request = URLRequest(url: appendedURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let data = try JSONEncoder().encode(user)
+            request.httpBody = data
+        } catch {
+            NSLog("UserController: Error encoding user info: \(error)")
+            completion(error)
+            return
+        }
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(NetworkError.failedSignUp(NSError(domain:  baseURL.absoluteString, code: response.statusCode, userInfo: nil)))
+                return
+            }
+            if let error = error {
+                completion(error)
+                return
+            }
+            guard let data = data else { completion(NetworkError.invalidData); return}
+            do {
+                self.loggedInUser?.token = try JSONDecoder().decode(Bearer.self, from: data)
+            } catch {
+                NSLog("UserController: Error decoding bearer token: \(error)")
+                completion(NetworkError.noDecode)
+                return
+            }
+            completion(nil)
+        }.resume()
     }
 }
+
