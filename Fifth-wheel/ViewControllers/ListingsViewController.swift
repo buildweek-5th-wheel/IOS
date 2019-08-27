@@ -1,5 +1,5 @@
 //
-//  RegistrationViewController.swift
+//  ListingsViewController.swift
 //  Fifth-wheel
 //
 //  Created by Joshua Sharp on 8/26/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegistrationViewController: BaseViewController {
+class ListingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
