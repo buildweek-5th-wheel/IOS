@@ -35,6 +35,7 @@ enum AppError: Error {
 
 //Network
 let baseURL = URL(string: "https://bw-5th-wheel.herokuapp.com")!
+
 enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"

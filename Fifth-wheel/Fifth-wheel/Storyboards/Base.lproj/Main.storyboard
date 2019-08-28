@@ -251,7 +251,7 @@ In</string>
         <!--Discover-->
         <scene sceneID="H49-TC-jMT">
             <objects>
-                <collectionViewController id="Nxp-hg-uxW" sceneMemberID="viewController">
+                <collectionViewController id="Nxp-hg-uxW" customClass="DiscoverCollectionViewController" customModule="Fifth_wheel" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="IAa-0Q-aqI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -277,7 +277,7 @@ In</string>
                             <color key="backgroundColor" red="0.58823529409999997" green="0.64705882349999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2Qa-qv-otQ">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ListingCell" id="2Qa-qv-otQ" customClass="ListingCollectionViewCell" customModule="Fifth_wheel" customModuleProvider="target">
                                 <rect key="frame" x="21.5" y="64" width="371" height="283"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -294,14 +294,14 @@ In</string>
                                                     <rect key="frame" x="20" y="19" width="328" height="192"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IaN-Mv-wn8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IaN-Mv-wn8">
                                                     <rect key="frame" x="20" y="219" width="328" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Couture-Bold" family="Couture" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zTj-MN-i1C">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zTj-MN-i1C">
                                                     <rect key="frame" x="20" y="235" width="328" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
@@ -326,6 +326,9 @@ In</string>
                                     <constraint firstItem="OBA-j1-7I5" firstAttribute="leading" secondItem="2Qa-qv-otQ" secondAttribute="leading" id="bNk-Vi-uyp"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="descriptionLabel" destination="zTj-MN-i1C" id="r2P-V1-6ld"/>
+                                    <outlet property="imageView" destination="pol-3a-2Sz" id="QWO-Yc-oD0"/>
+                                    <outlet property="nameLabel" destination="IaN-Mv-wn8" id="gld-0t-eo3"/>
                                     <segue destination="FP0-Jr-gJX" kind="show" id="fXy-ch-PfQ"/>
                                 </connections>
                             </collectionViewCell>
@@ -347,7 +350,7 @@ In</string>
         <!--Title-->
         <scene sceneID="mL6-xq-1e7">
             <objects>
-                <viewController id="fCK-He-hFP" sceneMemberID="viewController">
+                <viewController id="fCK-He-hFP" customClass="ListingDetailViewController" customModule="Fifth_wheel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vyO-Wg-g3F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -384,6 +387,12 @@ In</string>
                     <navigationItem key="navigationItem" title="Title" id="P2D-eb-mJV">
                         <barButtonItem key="rightBarButtonItem" title="Book" id="Rjh-uW-5Kk"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="hostLabel" destination="KSf-m0-3F7" id="FGu-Mx-WjC"/>
+                        <outlet property="imageView" destination="sTr-wn-POa" id="xlJ-lx-4Ad"/>
+                        <outlet property="locationLabel" destination="c0r-D3-LUg" id="ieV-88-sOr"/>
+                        <outlet property="placenameLabel" destination="IDt-DU-6Pg" id="T7k-Uf-0aS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iht-pW-xdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

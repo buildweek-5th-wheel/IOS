@@ -13,7 +13,6 @@
 		E03343D523119FF70051518B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E03343D423119FF70051518B /* Assets.xcassets */; };
 		E03343D823119FF70051518B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03343D623119FF70051518B /* LaunchScreen.storyboard */; };
 		E03343EA2313290D0051518B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343E92313290D0051518B /* LoginViewController.swift */; };
-		E03343EC23141C6C0051518B /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343EB23141C6C0051518B /* DiscoverViewController.swift */; };
 		E03343EE23144C6C0051518B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343ED23144C6B0051518B /* User.swift */; };
 		E04F21B623145A2D00FB96B2 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21B523145A2D00FB96B2 /* Listing.swift */; };
 		E04F21B8231460D200FB96B2 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21B7231460D200FB96B2 /* UserController.swift */; };
@@ -21,6 +20,10 @@
 		E04F21C12314615600FB96B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C02314615600FB96B2 /* Constants.swift */; };
 		E04F21C323148C8300FB96B2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C223148C8300FB96B2 /* AccountViewController.swift */; };
 		E04F21C523148CAC00FB96B2 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C423148CAC00FB96B2 /* ListingsViewController.swift */; };
+		E04F21D123162D0300FB96B2 /* ListingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D023162D0300FB96B2 /* ListingCollectionViewCell.swift */; };
+		E04F21D323162D4E00FB96B2 /* DiscoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D223162D4E00FB96B2 /* DiscoverCollectionViewController.swift */; };
+		E04F21D52316324700FB96B2 /* ListingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D42316324700FB96B2 /* ListingDetailViewController.swift */; };
+		E04F21D72316332600FB96B2 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D62316332600FB96B2 /* UIImageView.swift */; };
 		E835A6772314A80200A39B6F /* couture-bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = E835A6762314A7F100A39B6F /* couture-bld.otf */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +36,6 @@
 		E03343D723119FF70051518B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E03343D923119FF70051518B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E03343E92313290D0051518B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		E03343EB23141C6C0051518B /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		E03343ED23144C6B0051518B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E04F21B523145A2D00FB96B2 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		E04F21B7231460D200FB96B2 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,10 @@
 		E04F21C02314615600FB96B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E04F21C223148C8300FB96B2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E04F21C423148CAC00FB96B2 /* ListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
+		E04F21D023162D0300FB96B2 /* ListingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCollectionViewCell.swift; sourceTree = "<group>"; };
+		E04F21D223162D4E00FB96B2 /* DiscoverCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCollectionViewController.swift; sourceTree = "<group>"; };
+		E04F21D42316324700FB96B2 /* ListingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailViewController.swift; sourceTree = "<group>"; };
+		E04F21D62316332600FB96B2 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E835A6762314A7F100A39B6F /* couture-bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "couture-bld.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,19 +116,19 @@
 			children = (
 				E04F21C223148C8300FB96B2 /* AccountViewController.swift */,
 				E03343CF23119FF60051518B /* BaseViewController.swift */,
-				E03343EB23141C6C0051518B /* DiscoverViewController.swift */,
+				E04F21D223162D4E00FB96B2 /* DiscoverCollectionViewController.swift */,
 				E04F21C423148CAC00FB96B2 /* ListingsViewController.swift */,
 				E03343E92313290D0051518B /* LoginViewController.swift */,
+				E04F21D42316324700FB96B2 /* ListingDetailViewController.swift */,
 			);
-			name = ViewControllers;
-			path = ../ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		E03343E22311AA9A0051518B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E03343ED23144C6B0051518B /* User.swift */,
 				E04F21B523145A2D00FB96B2 /* Listing.swift */,
+				E03343ED23144C6B0051518B /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 		E03343E42311BB710051518B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E04F21D023162D0300FB96B2 /* ListingCollectionViewCell.swift */,
+				E04F21D62316332600FB96B2 /* UIImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,11 +225,14 @@
 			files = (
 				E04F21BA231460E400FB96B2 /* ListingController.swift in Sources */,
 				E04F21C12314615600FB96B2 /* Constants.swift in Sources */,
+				E04F21D72316332600FB96B2 /* UIImageView.swift in Sources */,
 				E04F21C323148C8300FB96B2 /* AccountViewController.swift in Sources */,
+				E04F21D123162D0300FB96B2 /* ListingCollectionViewCell.swift in Sources */,
 				E03343EA2313290D0051518B /* LoginViewController.swift in Sources */,
+				E04F21D52316324700FB96B2 /* ListingDetailViewController.swift in Sources */,
 				E03343D023119FF60051518B /* BaseViewController.swift in Sources */,
-				E03343EC23141C6C0051518B /* DiscoverViewController.swift in Sources */,
 				E03343EE23144C6C0051518B /* User.swift in Sources */,
+				E04F21D323162D4E00FB96B2 /* DiscoverCollectionViewController.swift in Sources */,
 				E04F21B8231460D200FB96B2 /* UserController.swift in Sources */,
 				E04F21B623145A2D00FB96B2 /* Listing.swift in Sources */,
 				E03343CE23119FF60051518B /* AppDelegate.swift in Sources */,
