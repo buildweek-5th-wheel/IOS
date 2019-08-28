@@ -19,8 +19,9 @@ class ListingController {
 extension ListingController {
     
     func createListing(userID: ReturnedId, listingName: String, description: String) {
+        guard let id = userID.userId else {return print("No user ID")}
         let newListing = Listing(userId: userID, listingName: listingName, description: description)
-        //network put function
+        postNetworkListing(listing: newListing, userID: id)
         userListings.append(newListing)
     }
     
@@ -32,7 +33,7 @@ extension ListingController {
     }
     
     func deleteListing(listing: Listing) {
-        //network delete function
+        deleteNetworkListing(listing: listing)
         guard let index = userListings.firstIndex(of: listing) else {return}
         userListings.remove(at: index)
     }
@@ -41,7 +42,7 @@ extension ListingController {
 //MARK: - Network Functions
 extension ListingController {
     
-    func postListing (listing: Listing, userID: Int, completion: @escaping (NetworkError?) -> Void = { _ in}) {
+    func postNetworkListing (listing: Listing, userID: Int, completion: @escaping (NetworkError?) -> Void = { _ in}) {
         guard let token = userController.loggedInUser?.token else {
             completion(.badAuth)
             return
@@ -88,7 +89,7 @@ extension ListingController {
             }.resume()
     }
     
-    func getAllListings(completion: @escaping (NetworkError?) -> Void) {
+    func getAllNetworkListings(completion: @escaping (NetworkError?) -> Void = { _ in})  {
         
         let allListingUrl = baseURL.appendingPathComponent("listings")
         var request = URLRequest(url: allListingUrl)
@@ -121,7 +122,7 @@ extension ListingController {
             }.resume()
     }
     
-    func deleteListing(listing: Listing, completion: @escaping (NetworkError?) -> Void) {
+    func deleteNetworkListing(listing: Listing, completion: @escaping (NetworkError?) -> Void = { _ in}) {
         guard let token = userController.loggedInUser?.token else {
             completion(.badAuth)
             return
@@ -143,5 +144,41 @@ extension ListingController {
             }
             completion(nil)
             }.resume()
+    }
+    
+    func updateNetworkListing(listing: Listing, completion: @escaping (NetworkError?) -> Void = { _ in}) {
+        guard let token = userController.loggedInUser?.token else {
+            completion(.badAuth)
+            return
+        }
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        let updateURl = baseURL.appendingPathComponent("listings").appendingPathComponent(String(describing: listing.listingId))
+        var request = URLRequest(url: updateURl)
+        request.httpMethod = HTTPMethod.put.rawValue
+        request.addValue("\(token)", forHTTPHeaderField: "token")
+        do {
+            let data = try encoder.encode(listing)
+            request.httpBody = data
+        } catch {
+            NSLog("ListingController: Error encoding updated listing: \(error)")
+            completion(.noEncode)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (_, response, error) in
+            if let error = error {
+                NSLog("ListingController: Error updating listing: \(error)")
+                completion(.noUpdate(error))
+                return
+            }
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                NSLog("Network returned wrong code")
+                completion(.noUpdate(NSError()))
+                return
+            }
+            completion(nil)
+        }.resume()
     }
 }

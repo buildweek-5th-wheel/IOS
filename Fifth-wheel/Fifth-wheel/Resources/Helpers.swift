@@ -30,6 +30,7 @@ enum NetworkError: Error {
     case noIDReturned
     case failedPost(Error)
     case failedDelete(Error)
+    case noUpdate(Error)
 }
 enum AppError: Error {
     case noData
