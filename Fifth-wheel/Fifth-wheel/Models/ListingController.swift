@@ -26,10 +26,10 @@ extension ListingController {
     }
     
     func updateListing(listing: Listing, listingName: String, description: String, image: String?) {
-        //network update function
         listing.description = description
         listing.listingName = listingName
         listing.imageUrl = image
+        updateNetworkListing(listing: listing)
     }
     
     func deleteListing(listing: Listing) {
