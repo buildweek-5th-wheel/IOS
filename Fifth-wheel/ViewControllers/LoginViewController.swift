@@ -9,6 +9,8 @@
 import UIKit
 
 class LoginViewController: BaseViewController {
+    
+    let userController = UserController()
 
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var signInButton: UILabel!
@@ -19,15 +21,35 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonLabel.text = "Sign Up"
-
         // Do any additional setup after loading the view.
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        buttonLabel.text = "Sign Up"
+        guard let username = usernameTextField.text,
+            let password = passwordTextField.text else {return}
+        userController.createUser(username: username, password: password, landowner: false)
+        guard let newUser = userController.loggedInUser else {return print("user not created")}
+        userController.signUp(with: newUser) { (error) in
+            if let error = error {
+                NSLog("Error signing up: \(error)")
+                //add code here if there was an error returned by the database
+            }
+        }
+        
+        
     }
     @IBAction func signInButtonTapped(_ sender: Any) {
         buttonLabel.text = "Sign In"
+        guard let username = usernameTextField.text,
+              let password = passwordTextField.text else {return}
+        let user = User(username: username, password: password, landowner: userController.loggedInUser?.landowner ?? false)
+        userController.loggedInUser = user
+        userController.signIn(with: user) { (error) in
+            if let error = error {
+                NSLog("Error signing in: \(error)")
+                //add code here if there was an error returned by the database
+            }
+        }
     }
 
     
