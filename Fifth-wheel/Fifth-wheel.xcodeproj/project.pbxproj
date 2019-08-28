@@ -114,8 +114,7 @@
 				E04F21C423148CAC00FB96B2 /* ListingsViewController.swift */,
 				E03343E92313290D0051518B /* LoginViewController.swift */,
 			);
-			name = ViewControllers;
-			path = ../ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		E03343E22311AA9A0051518B /* Models */ = {

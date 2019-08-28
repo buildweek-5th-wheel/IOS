@@ -122,6 +122,8 @@ extension UserController {
             }
             guard let data = data else { completion(NetworkError.invalidData); return}
             do {
+                //TODO: Read all fields from return and put into user
+                userController.loggedInUser = user
                 userController.loggedInUser?.token = try JSONDecoder().decode(Bearer.self, from: data)
                 self.saveUser()
             } catch {
