@@ -18,8 +18,6 @@
 		E04F21B623145A2D00FB96B2 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21B523145A2D00FB96B2 /* Listing.swift */; };
 		E04F21B8231460D200FB96B2 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21B7231460D200FB96B2 /* UserController.swift */; };
 		E04F21BA231460E400FB96B2 /* ListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21B9231460E400FB96B2 /* ListingController.swift */; };
-		E04F21BD2314612200FB96B2 /* UserAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21BC2314612200FB96B2 /* UserAPIController.swift */; };
-		E04F21BF2314613600FB96B2 /* ListingAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21BE2314613600FB96B2 /* ListingAPIController.swift */; };
 		E04F21C12314615600FB96B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C02314615600FB96B2 /* Constants.swift */; };
 		E04F21C323148C8300FB96B2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C223148C8300FB96B2 /* AccountViewController.swift */; };
 		E04F21C523148CAC00FB96B2 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C423148CAC00FB96B2 /* ListingsViewController.swift */; };
@@ -40,8 +38,6 @@
 		E04F21B523145A2D00FB96B2 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		E04F21B7231460D200FB96B2 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		E04F21B9231460E400FB96B2 /* ListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingController.swift; sourceTree = "<group>"; };
-		E04F21BC2314612200FB96B2 /* UserAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIController.swift; sourceTree = "<group>"; };
-		E04F21BE2314613600FB96B2 /* ListingAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingAPIController.swift; sourceTree = "<group>"; };
 		E04F21C02314615600FB96B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E04F21C223148C8300FB96B2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		E04F21C423148CAC00FB96B2 /* ListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +79,6 @@
 				E04F21C02314615600FB96B2 /* Constants.swift */,
 				E03343E22311AA9A0051518B /* Models */,
 				E03343E32311AAA10051518B /* Model Controllers */,
-				E04F21BB231460EE00FB96B2 /* APIs */,
 				E03343E02311A9DD0051518B /* Storyboards */,
 				E03343E42311BB710051518B /* Views */,
 				E03343E12311AA6C0051518B /* ViewControllers */,
@@ -146,15 +141,6 @@
 			children = (
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		E04F21BB231460EE00FB96B2 /* APIs */ = {
-			isa = PBXGroup;
-			children = (
-				E04F21BE2314613600FB96B2 /* ListingAPIController.swift */,
-				E04F21BC2314612200FB96B2 /* UserAPIController.swift */,
-			);
-			path = APIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,13 +221,11 @@
 				E03343EA2313290D0051518B /* LoginViewController.swift in Sources */,
 				E03343D023119FF60051518B /* BaseViewController.swift in Sources */,
 				E03343EC23141C6C0051518B /* DiscoverViewController.swift in Sources */,
-				E04F21BD2314612200FB96B2 /* UserAPIController.swift in Sources */,
 				E03343EE23144C6C0051518B /* User.swift in Sources */,
 				E04F21B8231460D200FB96B2 /* UserController.swift in Sources */,
 				E04F21B623145A2D00FB96B2 /* Listing.swift in Sources */,
 				E03343CE23119FF60051518B /* AppDelegate.swift in Sources */,
 				E04F21C523148CAC00FB96B2 /* ListingsViewController.swift in Sources */,
-				E04F21BF2314613600FB96B2 /* ListingAPIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

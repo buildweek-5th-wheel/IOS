@@ -9,43 +9,113 @@
 import UIKit
 
 class LoginViewController: BaseViewController {
-
     
-    @IBOutlet weak var segmentedButton: UISegmentedControl!
+    let userController = UserController()
+
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var signInButton: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signInRegButton: UIButton!
-    @IBOutlet weak var landOwnerStack: UIStackView!
+    @IBOutlet weak var buttonLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        landOwnerStack.isHidden = true
-
+        buttonLabel.text = "Sign Up"
         // Do any additional setup after loading the view.
     }
     
-  
-    @IBAction func signInOrRegButtonTapped(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-           signInRegButton.titleLabel?.text = "Sign In"
-            landOwnerStack.isHidden = true
-        } else {
-            signInRegButton.titleLabel?.text = "Sign Up"
-            landOwnerStack.isHidden = false
+    @IBAction func signUpButtonTapped(_ sender: Any) {
+        guard let username = usernameTextField.text,
+            let password = passwordTextField.text else {return}
+        userController.createUser(username: username, password: password, landowner: false)
+        guard let newUser = userController.loggedInUser else {return print("user not created")}
+        userController.signUp(with: newUser) { (error) in
+            if let error = error {
+                NSLog("Error signing up: \(error)")
+                //add code here if there was an error returned by the database
+            }
+        }
+        
+        
+    }
+    @IBAction func signInButtonTapped(_ sender: Any) {
+        buttonLabel.text = "Sign In"
+        guard let username = usernameTextField.text,
+              let password = passwordTextField.text else {return}
+        let user = User(username: username, password: password, landowner: userController.loggedInUser?.landowner ?? false)
+        userController.loggedInUser = user
+        userController.signIn(with: user) { (error) in
+            if let error = error {
+                NSLog("Error signing in: \(error)")
+                //add code here if there was an error returned by the database
+            }
         }
     }
-    
-    @IBAction func signInRegTapped(_ sender: Any) {
-    }
-    
 
+    
+    @IBAction func goButtonTapped(_ sender: Any) {
+        print (buttonLabel.text ?? "N/A")
+        switch buttonLabel.text {
+        case "Sign In":
+            guard let usernameText = usernameTextField.text, !usernameText.isEmpty,
+                let passwordText = passwordTextField.text, !passwordText.isEmpty else { return }
+            let user = User(username: usernameText, password: passwordText)
+            userController.signIn(with: user, completion: { (_) in
+                //Success
+                self.performSegue(withIdentifier: "TabBarSegue", sender: self)
+            })
+                //Alert Message login failed
+//                let alert = UIAlertController(title: "Login", message: "Login failed", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                self.present(alert, animated: true, completion: nil)
+        case "Sign Up":
+            registerUserAskIfLandowner()
+        default:
+            break
+        }
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+    }
+    
+    override func shouldPerformSegue(withIdentifier: String, sender: Any?) -> Bool {
+        if withIdentifier == "TabBarSegue" {
+            guard let _ = userController.loggedInUser else {return false}
+            return true
+        }
+        return true
     }
 
-
+    func registerUserAskIfLandowner () {
+        let alert = UIAlertController(title: "LandOwner", message: "Are you a landowner wanting to post listings?", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [alert] (_) in
+            let landOwner = true
+            callRegisterUser(landowner: landOwner)
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: {[alert] (_) in
+            let landOwner = false
+            callRegisterUser(landowner: landOwner)
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+        func callRegisterUser(landowner: Bool) {
+            guard let usernameText = usernameTextField.text, !usernameText.isEmpty,
+                let passwordText = passwordTextField.text, !passwordText.isEmpty else { return }
+            let user = User(username: usernameText, password: passwordText, landowner: landowner)
+            userController.signUp(with: user, completion: { (_) in
+                self.performSegue(withIdentifier: "TabBarSegue", sender: self)
+            })
+                //Alert Message registration failed
+//                let alert = UIAlertController(title: "Registration", message: "Registration failed", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                self.present(alert, animated: true, completion: nil)
+        }
+    }
 }
+
