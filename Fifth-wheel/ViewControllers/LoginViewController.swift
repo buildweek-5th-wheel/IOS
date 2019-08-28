@@ -38,16 +38,16 @@ class LoginViewController: BaseViewController {
             guard let usernameText = usernameTextField.text, !usernameText.isEmpty,
                 let passwordText = passwordTextField.text, !passwordText.isEmpty else { return }
             let user = User(username: usernameText, password: passwordText)
-            if !userController.loginUser(user: user) {
+            userController.signIn(with: user, completion: { (_) in
+                //Success
+                self.performSegue(withIdentifier: "TabBarSegue", sender: self)
+            })
                 //Alert Message login failed
-                let alert = UIAlertController(title: "Login", message: "Login failed", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            } else {
-                performSegue(withIdentifier: "TabBarSegue", sender: self)
-            }
+//                let alert = UIAlertController(title: "Login", message: "Login failed", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                self.present(alert, animated: true, completion: nil)
         case "Sign Up":
-            registerUser()
+            registerUserAskIfLandowner()
         default:
             break
         }
@@ -64,42 +64,36 @@ class LoginViewController: BaseViewController {
     
     override func shouldPerformSegue(withIdentifier: String, sender: Any?) -> Bool {
         if withIdentifier == "TabBarSegue" {
-            guard let _ = userController.currentUser else {return false}
+            guard let _ = userController.loggedInUser else {return false}
             return true
         }
         return true
     }
 
-    func registerUser () {
+    func registerUserAskIfLandowner () {
         let alert = UIAlertController(title: "LandOwner", message: "Are you a landowner wanting to post listings?", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [alert] (_) in
             let landOwner = true
-            if callRegisterUser(landowner: landOwner) {
-                self.performSegue(withIdentifier: "TabBarSegue", sender: self)
-            }
+            callRegisterUser(landowner: landOwner)
         }))
         alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: {[alert] (_) in
             let landOwner = false
-            if callRegisterUser(landowner: landOwner) {
-                self.performSegue(withIdentifier: "TabBarSegue", sender: self)
-            }
+            callRegisterUser(landowner: landOwner)
         }))
         self.present(alert, animated: true, completion: nil)
         
-        func callRegisterUser(landowner: Bool) -> Bool {
+        func callRegisterUser(landowner: Bool) {
             guard let usernameText = usernameTextField.text, !usernameText.isEmpty,
-                let passwordText = passwordTextField.text, !passwordText.isEmpty else { return false}
+                let passwordText = passwordTextField.text, !passwordText.isEmpty else { return }
             let user = User(username: usernameText, password: passwordText, landowner: landowner)
-            if !userController.registerUser(user: user) {
+            userController.signUp(with: user, completion: { (_) in
+                self.performSegue(withIdentifier: "TabBarSegue", sender: self)
+            })
                 //Alert Message registration failed
-                let alert = UIAlertController(title: "Registration", message: "Registration failed", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                return false
-            } else {
-                //segue to Discover VC
-                return true
-            }
+//                let alert = UIAlertController(title: "Registration", message: "Registration failed", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                self.present(alert, animated: true, completion: nil)
         }
     }
 }
+

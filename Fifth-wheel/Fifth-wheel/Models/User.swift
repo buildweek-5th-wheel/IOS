@@ -14,10 +14,12 @@ struct User: Codable {
     var id:         UInt? = nil
     var authToken:  String? = nil
     let username:   String
-    let password:   String
+    var password:   String
     var landowner:  Bool = false
     var imageURL:   String? = nil
     var bio:        String? = nil
+    var lsitings:   [Listing] = []
+    var token:      Bearer? = nil
     
     init (username: String, password: String, landowner: Bool = false) {
         self.username = username
@@ -28,4 +30,8 @@ struct User: Codable {
     mutating func toggleLandowner() {
         self.landowner = !landowner
     }
+}
+
+struct Bearer: Codable {
+    var token: String
 }
