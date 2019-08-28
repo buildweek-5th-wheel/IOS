@@ -50,9 +50,10 @@ class LoginViewController: BaseViewController {
                     let alert = UIAlertController(title: "Login", message: "Login failed", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
+                } else {
+                    self.userController.loggedInUser = user
+                    self.performSegue(withIdentifier: "TabBarSegue", sender: self)
                 }
-                self.userController.loggedInUser = user
-                self.performSegue(withIdentifier: "TabBarSegue", sender: self)
             }
         case "Sign Up":
             registerUserAskIfLandowner(user: user)

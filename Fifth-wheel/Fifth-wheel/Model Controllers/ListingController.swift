@@ -20,3 +20,8 @@ class ListingController {
         
     }
 }
+
+protocol ListingManager {
+    func addListing (listing: Listing)
+    func updateListing (listing: Listing)
+}

@@ -6,63 +6,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fifth-wheel/ViewControllers/LoginViewController.swift"
-            timestampString = "588655375.239416"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "callRegisterUser(user:landowner:)"
-            landmarkType = "9">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "callRegisterUser #1 (user: Fifth_wheel.User, landowner: Swift.Bool) -&gt; () in Fifth_wheel.LoginViewController.registerUserAskIfLandowner(user: Fifth_wheel.User) -&gt; ()"
-                  moduleName = "Fifth-wheel"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/joshuasharp/Dropbox/Lambda/iOS%20Projects/fifth-wheel-iOS/Fifth-wheel/Fifth-wheel/ViewControllers/LoginViewController.swift"
-                  timestampString = "588655375.316915"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "94"
-                  endingLineNumber = "94"
-                  offsetFromSymbolStart = "587">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in callRegisterUser #1 (user: Fifth_wheel.User, landowner: Swift.Bool) -&gt; () in Fifth_wheel.LoginViewController.registerUserAskIfLandowner(user: Fifth_wheel.User) -&gt; ()"
-                  moduleName = "Fifth-wheel"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/joshuasharp/Dropbox/Lambda/iOS%20Projects/fifth-wheel-iOS/Fifth-wheel/Fifth-wheel/ViewControllers/LoginViewController.swift"
-                  timestampString = "588655375.321018"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "95"
-                  endingLineNumber = "95"
-                  offsetFromSymbolStart = "45">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fifth-wheel/Model Controllers/UserController.swift"
-            timestampString = "588655547.716617"
+            timestampString = "588661174.259555"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "signUp(with:completion:)"
             landmarkType = "7">
          </BreakpointContent>
