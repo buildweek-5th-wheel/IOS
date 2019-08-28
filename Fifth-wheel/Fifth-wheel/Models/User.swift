@@ -12,13 +12,12 @@ import Foundation
 
 struct User: Codable {
     var id:         UInt? = nil
-    var authToken:  String? = nil
     let username:   String
     var password:   String
     var landowner:  Bool = false
     var imageURL:   String? = nil
     var bio:        String? = nil
-    var lsitings:   [Listing] = []
+    var listings:   [Listing] = []
     var token:      Bearer? = nil
     
     init (username: String, password: String, landowner: Bool = false) {

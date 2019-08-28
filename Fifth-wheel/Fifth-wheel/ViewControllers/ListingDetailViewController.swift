@@ -10,6 +10,7 @@ import UIKit
 
 class ListingDetailViewController: UIViewController {
     var listing: Listing?
+    var delegate: ListingManager?
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var placenameLabel: UILabel!
@@ -23,16 +24,18 @@ class ListingDetailViewController: UIViewController {
     }
     
     func updateViews() {
-        if let imageURL = listing?.imageURL {
-            imageView.downloaded(from: imageURL)
-        } else {
-            imageView.image = UIImage(named: "GenericCamping")
+        if let listing = listing {
+            if let imageURL = listing.imageURL {
+                imageView.downloaded(from: imageURL)
+            } else {
+                imageView.image = UIImage(named: "GenericCamping")
+            }
+            let name = listing.name
+            placenameLabel.text = name
+            let description = listing.description
+            locationLabel.text = description
+            //TODO: Do listing user name lookup and display
         }
-        let name = listing?.name ?? ""
-        placenameLabel.text = name
-        let description = listing?.description ?? ""
-        locationLabel.text = description
-        //TODO: Do listing user name lookup and display
     }
 
     /*

@@ -19,11 +19,12 @@
 		E04F21BA231460E400FB96B2 /* ListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21B9231460E400FB96B2 /* ListingController.swift */; };
 		E04F21C12314615600FB96B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C02314615600FB96B2 /* Constants.swift */; };
 		E04F21C323148C8300FB96B2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C223148C8300FB96B2 /* AccountViewController.swift */; };
-		E04F21C523148CAC00FB96B2 /* ListingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C423148CAC00FB96B2 /* ListingsViewController.swift */; };
 		E04F21D123162D0300FB96B2 /* ListingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D023162D0300FB96B2 /* ListingCollectionViewCell.swift */; };
 		E04F21D323162D4E00FB96B2 /* DiscoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D223162D4E00FB96B2 /* DiscoverCollectionViewController.swift */; };
 		E04F21D52316324700FB96B2 /* ListingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D42316324700FB96B2 /* ListingDetailViewController.swift */; };
 		E04F21D72316332600FB96B2 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D62316332600FB96B2 /* UIImageView.swift */; };
+		E04F21D92316C20A00FB96B2 /* ListingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D82316C20A00FB96B2 /* ListingsTableViewController.swift */; };
+		E04F21DC2316C25600FB96B2 /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21DB2316C25600FB96B2 /* ListingTableViewCell.swift */; };
 		E835A6772314A80200A39B6F /* couture-bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = E835A6762314A7F100A39B6F /* couture-bld.otf */; };
 /* End PBXBuildFile section */
 
@@ -42,11 +43,12 @@
 		E04F21B9231460E400FB96B2 /* ListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingController.swift; sourceTree = "<group>"; };
 		E04F21C02314615600FB96B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E04F21C223148C8300FB96B2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		E04F21C423148CAC00FB96B2 /* ListingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsViewController.swift; sourceTree = "<group>"; };
 		E04F21D023162D0300FB96B2 /* ListingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCollectionViewCell.swift; sourceTree = "<group>"; };
 		E04F21D223162D4E00FB96B2 /* DiscoverCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCollectionViewController.swift; sourceTree = "<group>"; };
 		E04F21D42316324700FB96B2 /* ListingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailViewController.swift; sourceTree = "<group>"; };
 		E04F21D62316332600FB96B2 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		E04F21D82316C20A00FB96B2 /* ListingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsTableViewController.swift; sourceTree = "<group>"; };
+		E04F21DB2316C25600FB96B2 /* ListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingTableViewCell.swift; sourceTree = "<group>"; };
 		E835A6762314A7F100A39B6F /* couture-bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "couture-bld.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,9 +119,9 @@
 				E04F21C223148C8300FB96B2 /* AccountViewController.swift */,
 				E03343CF23119FF60051518B /* BaseViewController.swift */,
 				E04F21D223162D4E00FB96B2 /* DiscoverCollectionViewController.swift */,
-				E04F21C423148CAC00FB96B2 /* ListingsViewController.swift */,
 				E03343E92313290D0051518B /* LoginViewController.swift */,
 				E04F21D42316324700FB96B2 /* ListingDetailViewController.swift */,
+				E04F21D82316C20A00FB96B2 /* ListingsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				E04F21D023162D0300FB96B2 /* ListingCollectionViewCell.swift */,
+				E04F21DB2316C25600FB96B2 /* ListingTableViewCell.swift */,
 				E04F21D62316332600FB96B2 /* UIImageView.swift */,
 			);
 			path = Views;
@@ -223,11 +226,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04F21D92316C20A00FB96B2 /* ListingsTableViewController.swift in Sources */,
 				E04F21BA231460E400FB96B2 /* ListingController.swift in Sources */,
 				E04F21C12314615600FB96B2 /* Constants.swift in Sources */,
 				E04F21D72316332600FB96B2 /* UIImageView.swift in Sources */,
 				E04F21C323148C8300FB96B2 /* AccountViewController.swift in Sources */,
 				E04F21D123162D0300FB96B2 /* ListingCollectionViewCell.swift in Sources */,
+				E04F21DC2316C25600FB96B2 /* ListingTableViewCell.swift in Sources */,
 				E03343EA2313290D0051518B /* LoginViewController.swift in Sources */,
 				E04F21D52316324700FB96B2 /* ListingDetailViewController.swift in Sources */,
 				E03343D023119FF60051518B /* BaseViewController.swift in Sources */,
@@ -236,7 +241,6 @@
 				E04F21B8231460D200FB96B2 /* UserController.swift in Sources */,
 				E04F21B623145A2D00FB96B2 /* Listing.swift in Sources */,
 				E03343CE23119FF60051518B /* AppDelegate.swift in Sources */,
-				E04F21C523148CAC00FB96B2 /* ListingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

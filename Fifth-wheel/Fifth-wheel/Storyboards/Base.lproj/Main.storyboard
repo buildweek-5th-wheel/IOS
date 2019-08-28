@@ -153,14 +153,14 @@ In</string>
         <!--Listings-->
         <scene sceneID="By6-ri-tHx">
             <objects>
-                <tableViewController id="FH1-vS-bYN" sceneMemberID="viewController">
+                <tableViewController title="Listings" id="FH1-vS-bYN" customClass="ListingsTableViewController" customModule="Fifth_wheel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FSL-g1-4vB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" red="0.58823529409999997" green="0.64705882349999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="YWd-Uv-Hxi" style="IBUITableViewCellStyleDefault" id="xye-ZV-xaS">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListingCell" textLabel="YWd-Uv-Hxi" detailTextLabel="c0Y-mw-ws7" style="IBUITableViewCellStyleSubtitle" id="xye-ZV-xaS" customClass="ListingTableViewCell" customModule="Fifth_wheel" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xye-ZV-xaS" id="Rs1-aI-7A0">
@@ -168,16 +168,25 @@ In</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YWd-Uv-Hxi">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c0Y-mw-ws7">
+                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="fPB-Yo-in0" kind="show" id="cOD-ED-dF4"/>
+                                    <outlet property="subtitleLabel" destination="c0Y-mw-ws7" id="oSR-Gu-JVy"/>
+                                    <outlet property="titleLabel" destination="YWd-Uv-Hxi" id="jSy-Cv-zIL"/>
+                                    <segue destination="fPB-Yo-in0" kind="show" identifier="DetailListing" id="cOD-ED-dF4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -189,7 +198,7 @@ In</string>
                     <navigationItem key="navigationItem" title="Listings" id="hLQ-nn-Yt4">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="3Up-DZ-K4q">
                             <connections>
-                                <segue destination="fPB-Yo-in0" kind="show" id="0zy-wo-M41"/>
+                                <segue destination="fPB-Yo-in0" kind="show" identifier="AddListing" id="0zy-wo-M41"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -198,10 +207,10 @@ In</string>
             </objects>
             <point key="canvasLocation" x="3330" y="767"/>
         </scene>
-        <!--View Controller-->
+        <!--Listing Detail View Controller-->
         <scene sceneID="4lz-em-A9M">
             <objects>
-                <viewController id="fPB-Yo-in0" sceneMemberID="viewController">
+                <viewController id="fPB-Yo-in0" customClass="ListingDetailViewController" customModule="Fifth_wheel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LdR-XH-wv1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
