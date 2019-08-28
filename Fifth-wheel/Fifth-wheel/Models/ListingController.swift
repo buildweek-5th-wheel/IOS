@@ -11,7 +11,6 @@ import Foundation
 class ListingController {
     
     //Properties
-    var userConroller: UserController?
     var userListings: [Listing] = []
     var allListings: [Listing] = []
 }
@@ -42,14 +41,19 @@ extension ListingController {
 //MARK: - Network Functions
 extension ListingController {
     
-    func postNetworkListing (listing: Listing, userID: Int, completion: @escaping (NetworkError?) -> Void = { _ in}) {
+    func postListing (listing: Listing, userID: Int, completion: @escaping (NetworkError?) -> Void = { _ in}) {
+        guard let token = userController.loggedInUser?.token else {
+            completion(.badAuth)
+            return
+        }
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let requestURL = baseURL.appendingPathComponent("listings").appendingPathExtension("json")
-        var request = URLRequest(url: requestURL)
+        let postListingURL = baseURL.appendingPathComponent("listings")
+        var request = URLRequest(url: postListingURL)
         request.httpMethod = HTTPMethod.post.rawValue
+        request.addValue("\(token)", forHTTPHeaderField: "token")
         
         do {
             request.httpBody = try encoder.encode(listing)
@@ -81,6 +85,63 @@ extension ListingController {
                 return
             }
             completion(nil)
-        }.resume()
+            }.resume()
+    }
+    
+    func getAllListings(completion: @escaping (NetworkError?) -> Void) {
+        
+        let allListingUrl = baseURL.appendingPathComponent("listings")
+        var request = URLRequest(url: allListingUrl)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(.otherError(NSError()))
+                return
+            }
+            if let error = error {
+                completion(.otherError(error))
+                return
+            }
+            guard let data = data else {
+                completion(.noData)
+                return
+            }
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                self.allListings = try decoder.decode([Listing].self, from: data)
+                completion(nil)
+            } catch {
+                completion(.otherError(error))
+                return
+            }
+            completion(nil)
+            }.resume()
+    }
+    
+    func deleteListing(listing: Listing, completion: @escaping (NetworkError?) -> Void) {
+        guard let token = userController.loggedInUser?.token else {
+            completion(.badAuth)
+            return
+        }
+        let deleteUrl = baseURL.appendingPathComponent("listings").appendingPathComponent(String(describing: listing.listingId))
+        var request = URLRequest(url: deleteUrl)
+        request.httpMethod = HTTPMethod.delete.rawValue
+        request.addValue("\(token)", forHTTPHeaderField: "token")
+        
+        URLSession.shared.dataTask(with: request) { (_, response, error) in
+            if let error = error {
+                NSLog("Error deleting Listing")
+                completion(.failedDelete(error))
+            }
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(.failedDelete(NSError()))
+                return
+            }
+            completion(nil)
+            }.resume()
     }
 }

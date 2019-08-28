@@ -7,6 +7,9 @@
 //
 
 import Foundation
+//Global Controllers
+let userController = UserController()
+let listingController = ListingController()
 
 struct ReturnedId: Codable, Equatable {
     let listingId: Int?
@@ -26,6 +29,7 @@ enum NetworkError: Error {
     case noEncode
     case noIDReturned
     case failedPost(Error)
+    case failedDelete(Error)
 }
 enum AppError: Error {
     case noData
