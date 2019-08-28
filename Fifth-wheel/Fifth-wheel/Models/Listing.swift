@@ -10,19 +10,17 @@ import Foundation
 
 class Listing: Codable, Equatable {
     
-    var listingId: Int?
-    var userId: String
+    var listingId: ReturnedId?
+    var userId: ReturnedId?
     var listingName: String
     var description: String
     var imageUrl: String?
     
-    init(userId: String, listingName: String, description: String) {
+    init(userId: ReturnedId, listingName: String, description: String) {
         self.userId = userId
         self.listingName = listingName
         self.description = description
     }
-    
-    
 }
 
 //Protocols
@@ -31,7 +29,7 @@ extension Listing {
         return lhs.listingId == rhs.listingId &&
         lhs.description == rhs.description &&
         lhs.listingName == rhs.listingName &&
-        lhs.imageUrl == rhs.imageUrl
+        lhs.imageUrl == rhs.imageUrl &&
         lhs.userId == rhs.userId
     }
 }

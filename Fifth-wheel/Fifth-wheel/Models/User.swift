@@ -9,7 +9,7 @@
 import Foundation
 
 class User: Codable {
-    var id: String?
+    var id: Int?
     let username: String
     var password: String
     var landowner: Bool

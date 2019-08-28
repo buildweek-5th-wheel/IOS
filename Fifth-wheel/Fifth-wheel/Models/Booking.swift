@@ -9,14 +9,14 @@
 import Foundation
 
 struct Booking {
-    let id: UUID
+    let id: Int?
     let listing: Listing
     let bookingUser: User
     let startDate: Date
     let endDate: Date
     var isBooked: Bool
     
-    init(id: UUID = UUID(), listing: Listing, booker: User, startDate: Date, endDate: Date, isBooked: Bool = false) {
+    init(id: Int, listing: Listing, booker: User, startDate: Date, endDate: Date, isBooked: Bool = false) {
         
         self.id = id
         self.listing = listing

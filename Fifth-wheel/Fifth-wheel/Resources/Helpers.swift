@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct ReturnedId: Codable, Equatable {
+    let listingId: Int?
+    let userId: Int?
+}
+
 //Errors
 enum NetworkError: Error {
     case noData
@@ -18,6 +23,9 @@ enum NetworkError: Error {
     case invalidData
     case failedSignUp(Error)
     case otherError(Error)
+    case noEncode
+    case noIDReturned
+    case failedPost(Error)
 }
 enum AppError: Error {
     case noData
