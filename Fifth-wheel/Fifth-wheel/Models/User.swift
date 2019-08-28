@@ -9,7 +9,7 @@
 import Foundation
 
 class User: Codable {
-    var id: Int?
+    var id: ReturnedId?
     let username: String
     var password: String
     var landowner: Bool
@@ -17,6 +17,7 @@ class User: Codable {
     var bio: String?
     var token: Bearer?
     var listings: [Listing]?
+    var bookings: [Booking]?
     
     init(username: String, password: String, landowner: Bool) {
         self.username = username

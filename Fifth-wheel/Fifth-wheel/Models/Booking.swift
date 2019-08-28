@@ -8,21 +8,29 @@
 
 import Foundation
 
-struct Booking {
-    let id: Int?
-    let listing: Listing
-    let bookingUser: User
-    let startDate: Date
-    let endDate: Date
-    var isBooked: Bool
+class Booking: Codable, Equatable {
     
-    init(id: Int, listing: Listing, booker: User, startDate: Date, endDate: Date, isBooked: Bool = false) {
+    
+    var bookingId: Int?
+    let listingId: Int
+    let userId: Int
+    let listedBy: String
+    var startDate: Date
+    var endDate: Date
+    
+    init(listingId: Int, userId: Int, startDate: Date, endDate: Date, listedBy: String) {
         
-        self.id = id
-        self.listing = listing
-        self.bookingUser = booker
+        self.listingId = listingId
+        self.userId = userId
         self.startDate = startDate
         self.endDate = endDate
-        self.isBooked = isBooked
+        self.listedBy = listedBy
+    }
+}
+
+//Protocol
+extension Booking {
+    static func == (lhs: Booking, rhs: Booking) -> Bool {
+        return lhs.bookingId == rhs.bookingId
     }
 }

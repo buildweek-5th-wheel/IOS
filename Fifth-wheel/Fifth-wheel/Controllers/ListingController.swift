@@ -19,7 +19,7 @@ class ListingController {
 extension ListingController {
     
     func createListing(userID: ReturnedId, listingName: String, description: String) {
-        guard let id = userID.userId else {return print("No user ID")}
+        guard let id = userID.id else {return print("No user ID")}
         let newListing = Listing(userId: userID, listingName: listingName, description: description)
         postNetworkListing(listing: newListing, userID: id)
         userListings.append(newListing)

@@ -13,7 +13,7 @@ let listingController = ListingController()
 
 struct ReturnedId: Codable, Equatable {
     let listingId: Int?
-    let userId: Int?
+    let id: Int?
 }
 
 //Errors

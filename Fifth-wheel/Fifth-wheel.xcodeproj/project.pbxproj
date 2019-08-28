@@ -16,6 +16,7 @@
 		F655289E231487C3002C2B1C /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289D231487C3002C2B1C /* UserController.swift */; };
 		F65528A02314B297002C2B1C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289F2314B297002C2B1C /* Helpers.swift */; };
 		F65528A22315F74D002C2B1C /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65528A12315F74D002C2B1C /* Booking.swift */; };
+		F657646423172A6E0083ED61 /* BookingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657646323172A6E0083ED61 /* BookingController.swift */; };
 		F65C45982316230A00606A34 /* ListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C45972316230A00606A34 /* ListingController.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,10 +29,11 @@
 		E03343D923119FF70051518B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E03343ED23144C6B0051518B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F655289B231485D3002C2B1C /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
-		F655289D231487C3002C2B1C /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = "Fifth-wheel/Models/UserController.swift"; sourceTree = SOURCE_ROOT; };
+		F655289D231487C3002C2B1C /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = "Fifth-wheel/Controllers/UserController.swift"; sourceTree = SOURCE_ROOT; };
 		F655289F2314B297002C2B1C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		F65528A12315F74D002C2B1C /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
-		F65C45972316230A00606A34 /* ListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListingController.swift; path = "Fifth-wheel/Models/ListingController.swift"; sourceTree = SOURCE_ROOT; };
+		F657646323172A6E0083ED61 /* BookingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingController.swift; sourceTree = "<group>"; };
+		F65C45972316230A00606A34 /* ListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListingController.swift; path = "Fifth-wheel/Controllers/ListingController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,7 @@
 			children = (
 				E03343D923119FF70051518B /* Info.plist */,
 				E03343E22311AA9A0051518B /* Models */,
-				E03343E32311AAA10051518B /* Model Controllers */,
+				F657646223172A2A0083ED61 /* Controllers */,
 				E03343E02311A9DD0051518B /* Storyboards */,
 				E03343E42311BB710051518B /* Views */,
 				E03343E12311AA6C0051518B /* ViewControllers */,
@@ -112,20 +114,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		E03343E32311AAA10051518B /* Model Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				F655289D231487C3002C2B1C /* UserController.swift */,
-				F65C45972316230A00606A34 /* ListingController.swift */,
-			);
-			path = "Model Controllers";
-			sourceTree = "<group>";
-		};
 		E03343E42311BB710051518B /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F657646223172A2A0083ED61 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F655289D231487C3002C2B1C /* UserController.swift */,
+				F65C45972316230A00606A34 /* ListingController.swift */,
+				F657646323172A6E0083ED61 /* BookingController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +209,7 @@
 				F655289E231487C3002C2B1C /* UserController.swift in Sources */,
 				F655289C231485D3002C2B1C /* Listing.swift in Sources */,
 				E03343CE23119FF60051518B /* AppDelegate.swift in Sources */,
+				F657646423172A6E0083ED61 /* BookingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
