@@ -18,6 +18,7 @@
 		F655289C231485D3002C2B1C /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289B231485D3002C2B1C /* Listing.swift */; };
 		F655289E231487C3002C2B1C /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289D231487C3002C2B1C /* UserController.swift */; };
 		F65528A02314B297002C2B1C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289F2314B297002C2B1C /* Helpers.swift */; };
+		F65528A22315F74D002C2B1C /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65528A12315F74D002C2B1C /* Booking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F655289B231485D3002C2B1C /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		F655289D231487C3002C2B1C /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = "Fifth-wheel/Models/UserController.swift"; sourceTree = SOURCE_ROOT; };
 		F655289F2314B297002C2B1C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		F65528A12315F74D002C2B1C /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				E03343ED23144C6B0051518B /* User.swift */,
 				F655289B231485D3002C2B1C /* Listing.swift */,
+				F65528A12315F74D002C2B1C /* Booking.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E03343EA2313290D0051518B /* LoginViewController.swift in Sources */,
+				F65528A22315F74D002C2B1C /* Booking.swift in Sources */,
 				E03343D023119FF60051518B /* BaseViewController.swift in Sources */,
 				E03343EC23141C6C0051518B /* RegistrationViewController.swift in Sources */,
 				F65528A02314B297002C2B1C /* Helpers.swift in Sources */,
