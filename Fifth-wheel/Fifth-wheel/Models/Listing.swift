@@ -8,9 +8,10 @@
 
 import Foundation
 
-struct Listing: Codable {
+class Listing: Codable, Equatable {
+    
     var listingId: Int?
-    let userId: String
+    var userId: String
     var listingName: String
     var description: String
     var imageUrl: String?
@@ -19,5 +20,18 @@ struct Listing: Codable {
         self.userId = userId
         self.listingName = listingName
         self.description = description
+    }
+    
+    
+}
+
+//Protocols
+extension Listing {
+    static func == (lhs: Listing, rhs: Listing) -> Bool {
+        return lhs.listingId == rhs.listingId &&
+        lhs.description == rhs.description &&
+        lhs.listingName == rhs.listingName &&
+        lhs.imageUrl == rhs.imageUrl
+        lhs.userId == rhs.userId
     }
 }

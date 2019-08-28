@@ -8,34 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		E03343CE23119FF60051518B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343CD23119FF60051518B /* AppDelegate.swift */; };
-		E03343D023119FF60051518B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343CF23119FF60051518B /* BaseViewController.swift */; };
 		E03343D323119FF60051518B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03343D123119FF60051518B /* Main.storyboard */; };
 		E03343D523119FF70051518B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E03343D423119FF70051518B /* Assets.xcassets */; };
 		E03343D823119FF70051518B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03343D623119FF70051518B /* LaunchScreen.storyboard */; };
-		E03343EA2313290D0051518B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343E92313290D0051518B /* LoginViewController.swift */; };
-		E03343EC23141C6C0051518B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343EB23141C6C0051518B /* RegistrationViewController.swift */; };
 		E03343EE23144C6C0051518B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343ED23144C6B0051518B /* User.swift */; };
 		F655289C231485D3002C2B1C /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289B231485D3002C2B1C /* Listing.swift */; };
 		F655289E231487C3002C2B1C /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289D231487C3002C2B1C /* UserController.swift */; };
 		F65528A02314B297002C2B1C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289F2314B297002C2B1C /* Helpers.swift */; };
 		F65528A22315F74D002C2B1C /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65528A12315F74D002C2B1C /* Booking.swift */; };
+		F65C45982316230A00606A34 /* ListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C45972316230A00606A34 /* ListingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E03343CA23119FF60051518B /* Fifth-wheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fifth-wheel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03343CD23119FF60051518B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E03343CF23119FF60051518B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E03343D223119FF60051518B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E03343D423119FF70051518B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E03343D723119FF70051518B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E03343D923119FF70051518B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E03343E92313290D0051518B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		E03343EB23141C6C0051518B /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		E03343ED23144C6B0051518B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F655289B231485D3002C2B1C /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		F655289D231487C3002C2B1C /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = "Fifth-wheel/Models/UserController.swift"; sourceTree = SOURCE_ROOT; };
 		F655289F2314B297002C2B1C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		F65528A12315F74D002C2B1C /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
+		F65C45972316230A00606A34 /* ListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListingController.swift; path = "Fifth-wheel/Models/ListingController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +97,6 @@
 		E03343E12311AA6C0051518B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E03343CF23119FF60051518B /* BaseViewController.swift */,
-				E03343E92313290D0051518B /* LoginViewController.swift */,
-				E03343EB23141C6C0051518B /* RegistrationViewController.swift */,
 			);
 			name = ViewControllers;
 			path = ../ViewControllers;
@@ -123,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				F655289D231487C3002C2B1C /* UserController.swift */,
+				F65C45972316230A00606A34 /* ListingController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -205,10 +199,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E03343EA2313290D0051518B /* LoginViewController.swift in Sources */,
+				F65C45982316230A00606A34 /* ListingController.swift in Sources */,
 				F65528A22315F74D002C2B1C /* Booking.swift in Sources */,
-				E03343D023119FF60051518B /* BaseViewController.swift in Sources */,
-				E03343EC23141C6C0051518B /* RegistrationViewController.swift in Sources */,
 				F65528A02314B297002C2B1C /* Helpers.swift in Sources */,
 				E03343EE23144C6C0051518B /* User.swift in Sources */,
 				F655289E231487C3002C2B1C /* UserController.swift in Sources */,
