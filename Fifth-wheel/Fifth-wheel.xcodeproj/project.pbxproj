@@ -25,6 +25,7 @@
 		E07BE85823175D5300BCC82F /* BookingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07BE85723175D5300BCC82F /* BookingDetailViewController.swift */; };
 		E07BE85A23175D8800BCC82F /* BookingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07BE85923175D8800BCC82F /* BookingTableViewController.swift */; };
 		E07BE85C23175EDF00BCC82F /* ListingBookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07BE85B23175EDE00BCC82F /* ListingBookDetailViewController.swift */; };
+		E07BE85E2317671000BCC82F /* BookingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07BE85D2317671000BCC82F /* BookingTableViewCell.swift */; };
 		E835A6772314A80200A39B6F /* couture-bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = E835A6762314A7F100A39B6F /* couture-bld.otf */; };
 		F655289E231487C3002C2B1C /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289D231487C3002C2B1C /* UserController.swift */; };
 		F65528A02314B297002C2B1C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289F2314B297002C2B1C /* Helpers.swift */; };
@@ -54,6 +55,7 @@
 		E07BE85723175D5300BCC82F /* BookingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailViewController.swift; sourceTree = "<group>"; };
 		E07BE85923175D8800BCC82F /* BookingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingTableViewController.swift; sourceTree = "<group>"; };
 		E07BE85B23175EDE00BCC82F /* ListingBookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingBookDetailViewController.swift; sourceTree = "<group>"; };
+		E07BE85D2317671000BCC82F /* BookingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingTableViewCell.swift; sourceTree = "<group>"; };
 		E835A6762314A7F100A39B6F /* couture-bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "couture-bld.otf"; sourceTree = "<group>"; };
 		F655289D231487C3002C2B1C /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = "Fifth-wheel/Controllers/UserController.swift"; sourceTree = SOURCE_ROOT; };
 		F655289F2314B297002C2B1C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				E00137B2231756DD00A252A9 /* UIImageView.swift */,
 				E00137B0231756D400A252A9 /* ListingTableViewCell.swift */,
 				E00137AE231756BE00A252A9 /* ListingCollectionViewCell.swift */,
+				E07BE85D2317671000BCC82F /* BookingTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			files = (
 				E00137B1231756D400A252A9 /* ListingTableViewCell.swift in Sources */,
 				E07BE85823175D5300BCC82F /* BookingDetailViewController.swift in Sources */,
+				E07BE85E2317671000BCC82F /* BookingTableViewCell.swift in Sources */,
 				E04F21D92316C20A00FB96B2 /* ListingsTableViewController.swift in Sources */,
 				E04F21C12314615600FB96B2 /* Constants.swift in Sources */,
 				E04F21C323148C8300FB96B2 /* AccountViewController.swift in Sources */,
