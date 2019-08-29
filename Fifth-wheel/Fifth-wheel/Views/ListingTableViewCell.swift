@@ -32,7 +32,7 @@ class ListingTableViewCell: UITableViewCell {
     }
 
     func updateViews() {
-        titleLabel.text = listing?.name
+        titleLabel.text = listing?.listingName
         subtitleLabel.text = listing?.description
     }
 }

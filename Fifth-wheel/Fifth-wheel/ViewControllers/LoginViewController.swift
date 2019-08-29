@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: BaseViewController {
+class LoginViewController: UIViewController {
     
     let userController = UserController()
 
@@ -90,7 +90,7 @@ class LoginViewController: BaseViewController {
         self.present(alert, animated: true, completion: nil)
         
         func callRegisterUser(user: User, landowner: Bool) {
-            var user = user
+            let user = user
             user.landowner = landowner
             userController.signUp(with: user) { (error) in
                 if let error = error {

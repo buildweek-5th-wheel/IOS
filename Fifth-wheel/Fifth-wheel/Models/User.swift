@@ -12,14 +12,14 @@ class User: Codable {
     var id: ReturnedId?
     let username: String
     var password: String
-    var landowner: Bool
+    var landowner: Bool?
     var imageURL: String?
     var bio: String?
     var token: Bearer?
     var listings: [Listing]?
     var bookings: [Booking]?
     
-    init(username: String, password: String, landowner: Bool) {
+    init(username: String, password: String, landowner: Bool? = false) {
         self.username = username
         self.password = password
         self.landowner = landowner

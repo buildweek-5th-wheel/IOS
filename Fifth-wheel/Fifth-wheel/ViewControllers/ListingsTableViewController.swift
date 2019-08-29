@@ -31,13 +31,13 @@ class ListingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return listingController.listings.count
+        return listingController.allListings.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? ListingTableViewCell else { return UITableViewCell()}
-        cell.listing = listingController.listings[indexPath.item]
+        cell.listing = listingController.allListings[indexPath.item]
         return cell
     }
     
@@ -89,7 +89,7 @@ class ListingsTableViewController: UITableViewController {
             vc.delegate = self
         case "DetailListing":
             if let indexPath = tableView.indexPathForSelectedRow {
-                vc.listing = listingController.listings[indexPath.item]
+                vc.listing = listingController.allListings[indexPath.item]
                 vc.delegate = self
             }
         default:
@@ -100,7 +100,7 @@ class ListingsTableViewController: UITableViewController {
 
 }
 
-extension ListingsTableViewController: ListingManager {
+extension ListingsTableViewController: ListingManagerDelegate {
     func addListing(listing: Listing) {
         
     }

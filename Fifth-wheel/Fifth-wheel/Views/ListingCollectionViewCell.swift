@@ -21,12 +21,12 @@ class ListingCollectionViewCell: UICollectionViewCell {
     }
     
     func updateViews() {
-        if let imageURL = listing?.imageURL {
+        if let imageURL = listing?.imageUrl {
             imageView.downloaded(from: imageURL)
         } else {
             imageView.image = UIImage(named: "GenericCamping")
         }
-        let name = listing?.name
+        let name = listing?.listingName
         nameLabel.text = name
         let description = listing?.description
         descriptionLabel.text = description

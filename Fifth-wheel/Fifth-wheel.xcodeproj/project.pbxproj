@@ -7,25 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E00137AB231755CF00A252A9 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00137AA231755CE00A252A9 /* Listing.swift */; };
+		E00137AF231756BE00A252A9 /* ListingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00137AE231756BE00A252A9 /* ListingCollectionViewCell.swift */; };
+		E00137B1231756D400A252A9 /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00137B0231756D400A252A9 /* ListingTableViewCell.swift */; };
+		E00137B3231756DD00A252A9 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00137B2231756DD00A252A9 /* UIImageView.swift */; };
 		E03343CE23119FF60051518B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343CD23119FF60051518B /* AppDelegate.swift */; };
 		E03343D323119FF60051518B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03343D123119FF60051518B /* Main.storyboard */; };
 		E03343D523119FF70051518B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E03343D423119FF70051518B /* Assets.xcassets */; };
 		E03343D823119FF70051518B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03343D623119FF70051518B /* LaunchScreen.storyboard */; };
 		E03343EA2313290D0051518B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343E92313290D0051518B /* LoginViewController.swift */; };
 		E03343EE23144C6C0051518B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03343ED23144C6B0051518B /* User.swift */; };
-		E04F21B623145A2D00FB96B2 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21B523145A2D00FB96B2 /* Listing.swift */; };
-		E04F21B8231460D200FB96B2 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21B7231460D200FB96B2 /* UserController.swift */; };
-		E04F21BA231460E400FB96B2 /* ListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21B9231460E400FB96B2 /* ListingController.swift */; };
 		E04F21C12314615600FB96B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C02314615600FB96B2 /* Constants.swift */; };
 		E04F21C323148C8300FB96B2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21C223148C8300FB96B2 /* AccountViewController.swift */; };
-		E04F21D123162D0300FB96B2 /* ListingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D023162D0300FB96B2 /* ListingCollectionViewCell.swift */; };
 		E04F21D323162D4E00FB96B2 /* DiscoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D223162D4E00FB96B2 /* DiscoverCollectionViewController.swift */; };
 		E04F21D52316324700FB96B2 /* ListingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D42316324700FB96B2 /* ListingDetailViewController.swift */; };
-		E04F21D72316332600FB96B2 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D62316332600FB96B2 /* UIImageView.swift */; };
 		E04F21D92316C20A00FB96B2 /* ListingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D82316C20A00FB96B2 /* ListingsTableViewController.swift */; };
-		E04F21DC2316C25600FB96B2 /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21DB2316C25600FB96B2 /* ListingTableViewCell.swift */; };
 		E835A6772314A80200A39B6F /* couture-bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = E835A6762314A7F100A39B6F /* couture-bld.otf */; };
-		F655289C231485D3002C2B1C /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289B231485D3002C2B1C /* Listing.swift */; };
 		F655289E231487C3002C2B1C /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289D231487C3002C2B1C /* UserController.swift */; };
 		F65528A02314B297002C2B1C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289F2314B297002C2B1C /* Helpers.swift */; };
 		F65528A22315F74D002C2B1C /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65528A12315F74D002C2B1C /* Booking.swift */; };
@@ -34,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E00137AA231755CE00A252A9 /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
+		E00137AE231756BE00A252A9 /* ListingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingCollectionViewCell.swift; sourceTree = "<group>"; };
+		E00137B0231756D400A252A9 /* ListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingTableViewCell.swift; sourceTree = "<group>"; };
+		E00137B2231756DD00A252A9 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E03343CA23119FF60051518B /* Fifth-wheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fifth-wheel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03343CD23119FF60051518B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E03343D223119FF60051518B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,19 +43,12 @@
 		E03343D923119FF70051518B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E03343E92313290D0051518B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E03343ED23144C6B0051518B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E04F21B523145A2D00FB96B2 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
-		E04F21B7231460D200FB96B2 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
-		E04F21B9231460E400FB96B2 /* ListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingController.swift; sourceTree = "<group>"; };
 		E04F21C02314615600FB96B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E04F21C223148C8300FB96B2 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		E04F21D023162D0300FB96B2 /* ListingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCollectionViewCell.swift; sourceTree = "<group>"; };
 		E04F21D223162D4E00FB96B2 /* DiscoverCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCollectionViewController.swift; sourceTree = "<group>"; };
 		E04F21D42316324700FB96B2 /* ListingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailViewController.swift; sourceTree = "<group>"; };
-		E04F21D62316332600FB96B2 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		E04F21D82316C20A00FB96B2 /* ListingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsTableViewController.swift; sourceTree = "<group>"; };
-		E04F21DB2316C25600FB96B2 /* ListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingTableViewCell.swift; sourceTree = "<group>"; };
 		E835A6762314A7F100A39B6F /* couture-bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "couture-bld.otf"; sourceTree = "<group>"; };
-		F655289B231485D3002C2B1C /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		F655289D231487C3002C2B1C /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = "Fifth-wheel/Controllers/UserController.swift"; sourceTree = SOURCE_ROOT; };
 		F655289F2314B297002C2B1C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		F65528A12315F74D002C2B1C /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
@@ -94,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				E03343D923119FF70051518B /* Info.plist */,
-				E04F21C02314615600FB96B2 /* Constants.swift */,
 				E03343E22311AA9A0051518B /* Models */,
 				F657646223172A2A0083ED61 /* Controllers */,
 				E03343E02311A9DD0051518B /* Storyboards */,
@@ -108,6 +101,7 @@
 		E03343DF2311A9CB0051518B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E04F21C02314615600FB96B2 /* Constants.swift */,
 				F655289F2314B297002C2B1C /* Helpers.swift */,
 				E03343CD23119FF60051518B /* AppDelegate.swift */,
 				E03343D423119FF70051518B /* Assets.xcassets */,
@@ -128,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				E04F21C223148C8300FB96B2 /* AccountViewController.swift */,
-				E03343CF23119FF60051518B /* BaseViewController.swift */,
 				E04F21D223162D4E00FB96B2 /* DiscoverCollectionViewController.swift */,
 				E03343E92313290D0051518B /* LoginViewController.swift */,
 				E04F21D42316324700FB96B2 /* ListingDetailViewController.swift */,
@@ -140,9 +133,8 @@
 		E03343E22311AA9A0051518B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E04F21B523145A2D00FB96B2 /* Listing.swift */,
+				E00137AA231755CE00A252A9 /* Listing.swift */,
 				E03343ED23144C6B0051518B /* User.swift */,
-				F655289B231485D3002C2B1C /* Listing.swift */,
 				F65528A12315F74D002C2B1C /* Booking.swift */,
 			);
 			path = Models;
@@ -151,8 +143,9 @@
 		E03343E42311BB710051518B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E04F21B9231460E400FB96B2 /* ListingController.swift */,
-				E04F21B7231460D200FB96B2 /* UserController.swift */,
+				E00137B2231756DD00A252A9 /* UIImageView.swift */,
+				E00137B0231756D400A252A9 /* ListingTableViewCell.swift */,
+				E00137AE231756BE00A252A9 /* ListingCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,9 +153,6 @@
 		F657646223172A2A0083ED61 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E04F21D023162D0300FB96B2 /* ListingCollectionViewCell.swift */,
-				E04F21DB2316C25600FB96B2 /* ListingTableViewCell.swift */,
-				E04F21D62316332600FB96B2 /* UIImageView.swift */,
 				F655289D231487C3002C2B1C /* UserController.swift */,
 				F65C45972316230A00606A34 /* ListingController.swift */,
 				F657646323172A6E0083ED61 /* BookingController.swift */,
@@ -242,25 +232,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E00137B1231756D400A252A9 /* ListingTableViewCell.swift in Sources */,
 				E04F21D92316C20A00FB96B2 /* ListingsTableViewController.swift in Sources */,
-				E04F21BA231460E400FB96B2 /* ListingController.swift in Sources */,
 				E04F21C12314615600FB96B2 /* Constants.swift in Sources */,
-				E04F21D72316332600FB96B2 /* UIImageView.swift in Sources */,
 				E04F21C323148C8300FB96B2 /* AccountViewController.swift in Sources */,
-				E04F21D123162D0300FB96B2 /* ListingCollectionViewCell.swift in Sources */,
-				E04F21DC2316C25600FB96B2 /* ListingTableViewCell.swift in Sources */,
+				E00137AB231755CF00A252A9 /* Listing.swift in Sources */,
 				E03343EA2313290D0051518B /* LoginViewController.swift in Sources */,
 				E04F21D52316324700FB96B2 /* ListingDetailViewController.swift in Sources */,
-				E03343D023119FF60051518B /* BaseViewController.swift in Sources */,
 				F65C45982316230A00606A34 /* ListingController.swift in Sources */,
 				F65528A22315F74D002C2B1C /* Booking.swift in Sources */,
 				F65528A02314B297002C2B1C /* Helpers.swift in Sources */,
+				E00137B3231756DD00A252A9 /* UIImageView.swift in Sources */,
 				E03343EE23144C6C0051518B /* User.swift in Sources */,
 				E04F21D323162D4E00FB96B2 /* DiscoverCollectionViewController.swift in Sources */,
-				E04F21B8231460D200FB96B2 /* UserController.swift in Sources */,
-				E04F21B623145A2D00FB96B2 /* Listing.swift in Sources */,
+				E00137AF231756BE00A252A9 /* ListingCollectionViewCell.swift in Sources */,
 				F655289E231487C3002C2B1C /* UserController.swift in Sources */,
-				F655289C231485D3002C2B1C /* Listing.swift in Sources */,
 				E03343CE23119FF60051518B /* AppDelegate.swift in Sources */,
 				F657646423172A6E0083ED61 /* BookingController.swift in Sources */,
 			);

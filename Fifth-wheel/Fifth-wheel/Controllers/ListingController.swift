@@ -182,3 +182,8 @@ extension ListingController {
         }.resume()
     }
 }
+
+protocol ListingManagerDelegate {
+    func addListing(listing: Listing)
+    func updateListing(listing: Listing)
+}

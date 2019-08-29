@@ -44,12 +44,12 @@ class DiscoverCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return listingController.listings.count
+        return listingController.allListings.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ListingCollectionViewCell else { return UICollectionViewCell()}
-        cell.listing = listingController.listings[indexPath.item]
+        cell.listing = listingController.allListings[indexPath.item]
         return cell
     }
 
