@@ -13,6 +13,31 @@ class ListingController {
     //Properties
     var userListings: [Listing] = []
     var allListings: [Listing] = []
+    
+    func getListingImageUrl (byId listingId: Int) -> String {
+        var result: String = ""
+        for listing in self.allListings {
+            if let id = listing.listingId?.listingId {
+                if id == listingId {
+                    if let imageUrl = listing.imageUrl {
+                        result = imageUrl
+                    }
+                }
+            }
+        }
+        return result
+    }
+    
+    func getListing (withId listingId: Int) -> Listing? {
+        for listing in self.allListings {
+            if let id = listing.listingId?.listingId {
+                if id == listingId {
+                    return listing
+                }
+            }
+        }
+        return nil
+    }
 }
 
 //MARK: - CRUD

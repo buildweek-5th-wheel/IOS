@@ -16,6 +16,8 @@ class ListingBookDetailViewController: UIViewController {
     @IBOutlet weak var placenameLabel: UILabel!
     @IBOutlet weak var hostLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var startDateTextField: UITextField!
+    @IBOutlet weak var endDateTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,14 @@ class ListingBookDetailViewController: UIViewController {
             //TODO: Do listing user name lookup and display
         }
     }
-
+    
+    @IBAction func bookTapped(_ sender: Any) {
+        guard let startDate = startDateTextField.text,
+            let endDate = endDateTextField.text else { return }
+        
+        //TODO: write code to book listing, return success or failure, seque back
+    }
+    
     /*
     // MARK: - Navigation
 
