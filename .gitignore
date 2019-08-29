@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Created by https://www.gitignore.io/api/swift
 # Edit at https://www.gitignore.io/?templates=swift
 
@@ -80,9 +79,3 @@ fastlane/test_output
 iOSInjectionProject/
 
 # End of https://www.gitignore.io/api/swift
-=======
-
-Fifth-wheel/Fifth-wheel.xcodeproj/project.xcworkspace/xcuserdata/joshuasharp.xcuserdatad/UserInterfaceState.xcuserstate
->>>>>>> 12092b5887240e7a0022e2205e2e8088edb4fb42
-
-Fifth-wheel/.DS_Store

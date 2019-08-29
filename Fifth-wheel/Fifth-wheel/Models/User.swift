@@ -8,26 +8,21 @@
 
 import Foundation
 
-// MARK: - Constants & Variables
-
-struct User: Codable {
-    var id:         UInt? = nil
-    let username:   String
-    var password:   String
-    var landowner:  Bool = false
-    var imageURL:   String? = nil
-    var bio:        String? = nil
-    var listings:   [Listing] = []
-    var token:      Bearer? = nil
+class User: Codable {
+    var id: ReturnedId?
+    let username: String
+    var password: String
+    var landowner: Bool
+    var imageURL: String?
+    var bio: String?
+    var token: Bearer?
+    var listings: [Listing]?
+    var bookings: [Booking]?
     
-    init (username: String, password: String, landowner: Bool = false) {
+    init(username: String, password: String, landowner: Bool) {
         self.username = username
         self.password = password
         self.landowner = landowner
-    }
-    
-    mutating func toggleLandowner() {
-        self.landowner = !landowner
     }
 }
 
