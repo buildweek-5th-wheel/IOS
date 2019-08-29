@@ -35,4 +35,53 @@ extension BookingController {
     }
 }
 
-
+//MARK: - Network Functions
+extension BookingController {
+    
+    func postNetworkBooking (booking: Booking, completion: @escaping (NetworkError?) -> Void = { _ in}) {
+        guard let token = userController.loggedInUser?.token else {
+            completion(.badAuth)
+            return
+        }
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let postBookingURL = baseURL.appendingPathComponent("listings").appendingPathComponent(String(describing: booking.listingId)).appendingPathComponent("booking")
+        var request = URLRequest(url: postBookingURL)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.addValue("\(token)", forHTTPHeaderField: "token")
+        
+        do {
+            request.httpBody = try encoder.encode(booking)
+        } catch {
+            NSLog("BookingController: postNetworkBooking error: \(error)")
+            completion(.noEncode)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 201 {
+                completion(NetworkError.failedPost(NSError(domain: baseURL.absoluteString, code: response.statusCode, userInfo: nil)))
+                return
+            }
+            
+            if let error = error {
+                NSLog("BookingController: postNetworkingBooking error: \(error)")
+                completion(.noEncode)
+                return
+            }
+            guard let data = data else {completion(NetworkError.invalidData); return}
+            
+            do {
+                booking.bookingId = try decoder.decode(ReturnedId, from: data)
+            } catch {
+                NSLog("ListingController: Error adding listingID: \(error)")
+                completion(NetworkError.noIDReturned)
+                return
+            }
+            completion(nil)
+            }.resume()
+    }
+}
