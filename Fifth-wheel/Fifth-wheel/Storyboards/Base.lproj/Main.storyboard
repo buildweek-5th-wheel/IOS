@@ -154,7 +154,7 @@ In</string>
         <!--Bookings-->
         <scene sceneID="Mr8-Kg-e2E">
             <objects>
-                <tableViewController id="wPd-lP-awF" sceneMemberID="viewController">
+                <tableViewController id="wPd-lP-awF" customClass="BookingTableViewController" customModule="Fifth_wheel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dLc-3E-APU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,10 +192,10 @@ In</string>
             </objects>
             <point key="canvasLocation" x="1977" y="1535"/>
         </scene>
-        <!--View Controller-->
+        <!--Booking Detail View Controller-->
         <scene sceneID="knr-3h-YFI">
             <objects>
-                <viewController id="par-Wy-NnB" sceneMemberID="viewController">
+                <viewController id="par-Wy-NnB" customClass="BookingDetailViewController" customModule="Fifth_wheel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8ac-lX-MXR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,10 +454,10 @@ In</string>
             </objects>
             <point key="canvasLocation" x="358" y="767"/>
         </scene>
-        <!--View Controller-->
+        <!--Listing Book Detail View Controller-->
         <scene sceneID="mL6-xq-1e7">
             <objects>
-                <viewController id="fCK-He-hFP" customClass="ListingDetailViewController" customModule="Fifth_wheel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fCK-He-hFP" customClass="ListingBookDetailViewController" customModule="Fifth_wheel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vyO-Wg-g3F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -731,7 +731,7 @@ In</string>
         <image name="grass" width="500" height="150"/>
         <image name="icons mobile home " width="88" height="70"/>
         <image name="icons8-account-100" width="36" height="39"/>
-        <image name="icons8-booking-50" width="16.666666030883789" height="16.666666030883789"/>
+        <image name="icons8-booking-50" width="16" height="16"/>
         <image name="icons8-mobile-home-250" width="44" height="36"/>
         <image name="rectangle" width="500" height="627"/>
     </resources>

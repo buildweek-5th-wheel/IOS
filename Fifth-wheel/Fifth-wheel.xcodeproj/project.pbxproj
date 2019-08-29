@@ -22,6 +22,9 @@
 		E04F21D323162D4E00FB96B2 /* DiscoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D223162D4E00FB96B2 /* DiscoverCollectionViewController.swift */; };
 		E04F21D52316324700FB96B2 /* ListingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D42316324700FB96B2 /* ListingDetailViewController.swift */; };
 		E04F21D92316C20A00FB96B2 /* ListingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F21D82316C20A00FB96B2 /* ListingsTableViewController.swift */; };
+		E07BE85823175D5300BCC82F /* BookingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07BE85723175D5300BCC82F /* BookingDetailViewController.swift */; };
+		E07BE85A23175D8800BCC82F /* BookingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07BE85923175D8800BCC82F /* BookingTableViewController.swift */; };
+		E07BE85C23175EDF00BCC82F /* ListingBookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07BE85B23175EDE00BCC82F /* ListingBookDetailViewController.swift */; };
 		E835A6772314A80200A39B6F /* couture-bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = E835A6762314A7F100A39B6F /* couture-bld.otf */; };
 		F655289E231487C3002C2B1C /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289D231487C3002C2B1C /* UserController.swift */; };
 		F65528A02314B297002C2B1C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289F2314B297002C2B1C /* Helpers.swift */; };
@@ -48,6 +51,9 @@
 		E04F21D223162D4E00FB96B2 /* DiscoverCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCollectionViewController.swift; sourceTree = "<group>"; };
 		E04F21D42316324700FB96B2 /* ListingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailViewController.swift; sourceTree = "<group>"; };
 		E04F21D82316C20A00FB96B2 /* ListingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingsTableViewController.swift; sourceTree = "<group>"; };
+		E07BE85723175D5300BCC82F /* BookingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingDetailViewController.swift; sourceTree = "<group>"; };
+		E07BE85923175D8800BCC82F /* BookingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingTableViewController.swift; sourceTree = "<group>"; };
+		E07BE85B23175EDE00BCC82F /* ListingBookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingBookDetailViewController.swift; sourceTree = "<group>"; };
 		E835A6762314A7F100A39B6F /* couture-bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "couture-bld.otf"; sourceTree = "<group>"; };
 		F655289D231487C3002C2B1C /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = "Fifth-wheel/Controllers/UserController.swift"; sourceTree = SOURCE_ROOT; };
 		F655289F2314B297002C2B1C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -121,11 +127,14 @@
 		E03343E12311AA6C0051518B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E07BE85B23175EDE00BCC82F /* ListingBookDetailViewController.swift */,
 				E04F21C223148C8300FB96B2 /* AccountViewController.swift */,
 				E04F21D223162D4E00FB96B2 /* DiscoverCollectionViewController.swift */,
 				E03343E92313290D0051518B /* LoginViewController.swift */,
 				E04F21D42316324700FB96B2 /* ListingDetailViewController.swift */,
 				E04F21D82316C20A00FB96B2 /* ListingsTableViewController.swift */,
+				E07BE85723175D5300BCC82F /* BookingDetailViewController.swift */,
+				E07BE85923175D8800BCC82F /* BookingTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -233,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E00137B1231756D400A252A9 /* ListingTableViewCell.swift in Sources */,
+				E07BE85823175D5300BCC82F /* BookingDetailViewController.swift in Sources */,
 				E04F21D92316C20A00FB96B2 /* ListingsTableViewController.swift in Sources */,
 				E04F21C12314615600FB96B2 /* Constants.swift in Sources */,
 				E04F21C323148C8300FB96B2 /* AccountViewController.swift in Sources */,
@@ -242,10 +252,12 @@
 				F65C45982316230A00606A34 /* ListingController.swift in Sources */,
 				F65528A22315F74D002C2B1C /* Booking.swift in Sources */,
 				F65528A02314B297002C2B1C /* Helpers.swift in Sources */,
+				E07BE85C23175EDF00BCC82F /* ListingBookDetailViewController.swift in Sources */,
 				E00137B3231756DD00A252A9 /* UIImageView.swift in Sources */,
 				E03343EE23144C6C0051518B /* User.swift in Sources */,
 				E04F21D323162D4E00FB96B2 /* DiscoverCollectionViewController.swift in Sources */,
 				E00137AF231756BE00A252A9 /* ListingCollectionViewCell.swift in Sources */,
+				E07BE85A23175D8800BCC82F /* BookingTableViewController.swift in Sources */,
 				F655289E231487C3002C2B1C /* UserController.swift in Sources */,
 				E03343CE23119FF60051518B /* AppDelegate.swift in Sources */,
 				F657646423172A6E0083ED61 /* BookingController.swift in Sources */,
