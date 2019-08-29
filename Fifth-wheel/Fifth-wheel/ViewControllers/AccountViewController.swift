@@ -9,13 +9,15 @@
 import UIKit
 
 class AccountViewController: UIViewController {
+    //Properties
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        if userController.token == nil {
-            
+        if token == nil {
             performSegue(withIdentifier: "LoginSegue", sender: self)
+        } else {
+            return
         }
     }
 

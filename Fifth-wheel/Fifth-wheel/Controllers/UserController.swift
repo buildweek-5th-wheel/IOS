@@ -13,7 +13,7 @@ class UserController {
     //Properties
     var userListings: [Listing] = []
     var users: [User] = []
-    var token: Bearer?
+    //var token: Bearer?
     var loggedInUser: LogginUser?
     
     private var userInfo: URL? {
@@ -48,8 +48,8 @@ extension UserController {
     func saveTokenAndUsername(){
         guard let url = userInfo else {return print("Url not created in directory")}
         do {
-            let token = try PropertyListEncoder().encode(self.token)
-            try token.write(to: url)
+            let newToken = try PropertyListEncoder().encode(token)
+            try newToken.write(to: url)
             let logginUser = try PropertyListEncoder().encode(self.loggedInUser)
             try logginUser.write(to: url)
         } catch {
@@ -118,8 +118,9 @@ extension UserController {
             }
             guard let data = data else { completion(NetworkError.invalidData); return}
             do {
-                self.token = try JSONDecoder().decode(Bearer.self, from: data)
+                token = try JSONDecoder().decode(Bearer.self, from: data)
                 self.saveTokenAndUsername()
+                
             } catch {
                 NSLog("UserController: Error decoding bearer token: \(error)")
                 completion(NetworkError.noDecode)

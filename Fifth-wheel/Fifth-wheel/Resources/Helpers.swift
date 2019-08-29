@@ -10,6 +10,7 @@ import Foundation
 //Global Controllers
 let userController = UserController()
 let listingController = ListingController()
+var token: Bearer?
 
 struct ReturnedId: Codable, Equatable {
     let listingId: Int?

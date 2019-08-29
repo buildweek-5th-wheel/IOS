@@ -68,7 +68,7 @@ extension ListingController {
 extension ListingController {
     
     func postNetworkListing (listing: Listing, tokenID: Int, completion: @escaping (NetworkError?) -> Void = { _ in}) {
-        guard let token = userController.token?.token else {
+        guard let token = token?.token else {
             completion(.badAuth)
             return
         }
@@ -139,7 +139,7 @@ extension ListingController {
     }
     
     func deleteNetworkListing(listing: Listing, completion: @escaping (NetworkError?) -> Void = { _ in}) {
-        guard let token = userController.token?.token else {
+        guard let token = token?.token else {
             completion(.badAuth)
             return
         }
@@ -163,7 +163,7 @@ extension ListingController {
     }
     
     func updateNetworkListing(listing: Listing, completion: @escaping (NetworkError?) -> Void = { _ in}) {
-        guard let token = userController.token?.token else {
+        guard let token = token?.token else {
             completion(.badAuth)
             return
         }

@@ -54,6 +54,10 @@ class LoginViewController: UIViewController {
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
                     }
+                } else {
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 }
             })
         } else {
@@ -89,7 +93,7 @@ class LoginViewController: UIViewController {
     
         override func shouldPerformSegue(withIdentifier: String, sender: Any?) -> Bool {
             if withIdentifier == "TabBarSegue" {
-                guard let _ = userController.token else {return false}
+                guard let _ = token else {return false}
                 return true
             }
             return true

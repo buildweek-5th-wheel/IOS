@@ -16,7 +16,7 @@ class ListingCollectionViewCell: UICollectionViewCell {
     
     var listing: Listing? {
         didSet{
-            updateViews()
+            //updateViews()
         }
     }
     
