@@ -6,16 +6,22 @@
 //  Copyright © 2019 Lambda. All rights reserved.
 //
 
-// MARK: - Constants & Variables
 import Foundation
+
+// MARK: - Constants & Variables
+var listingController = ListingController()
 
 // MARK: - Object/Method definitions
 
 class ListingController {
-    var listingAPIController = ListingAPIController ()
     var listings: [Listing] = []
     
     init () {
         
     }
+}
+
+protocol ListingManager {
+    func addListing (listing: Listing)
+    func updateListing (listing: Listing)
 }

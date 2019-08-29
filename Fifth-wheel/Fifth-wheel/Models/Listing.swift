@@ -2,20 +2,35 @@
 //  Listing.swift
 //  Fifth-wheel
 //
-//  Created by Joshua Sharp on 8/26/19.
+//  Created by Nathan Hedgeman on 8/26/19.
 //  Copyright © 2019 Lambda. All rights reserved.
 //
 
 import Foundation
 
-// MARK: - Constants & Variables
+class Listing: Codable, Equatable {
+    
+    var listingId: Int?
+    var userId: Int?
+    var listingName: String
+    var description: String
+    var imageUrl: String?
+    var address: String?
+    
+    init(userId: Int, listingName: String, description: String) {
+        self.userId = userId
+        self.listingName = listingName
+        self.description = description
+    }
+}
 
-struct Listing: Codable {
-    let id:             UInt
-    let name:           String
-    let uiserID:        UInt
-    var description:    String
-    var imageURL:       String?
-    var latitude:       Double?
-    var longitude:      Double?
+//Protocols
+extension Listing {
+    static func == (lhs: Listing, rhs: Listing) -> Bool {
+        return lhs.listingId == rhs.listingId &&
+        lhs.description == rhs.description &&
+        lhs.listingName == rhs.listingName &&
+        lhs.imageUrl == rhs.imageUrl &&
+        lhs.userId == rhs.userId
+    }
 }
