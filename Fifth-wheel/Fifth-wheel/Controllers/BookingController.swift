@@ -75,7 +75,7 @@ extension BookingController {
             guard let data = data else {completion(NetworkError.invalidData); return}
             
             do {
-                booking.bookingId = try decoder.decode(ReturnedId, from: data)
+                booking.bookingId = try decoder.decode(ReturnedId.self, from: data)
             } catch {
                 NSLog("ListingController: Error adding listingID: \(error)")
                 completion(NetworkError.noIDReturned)

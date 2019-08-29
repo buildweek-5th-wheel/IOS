@@ -11,7 +11,7 @@ import Foundation
 class Booking: Codable, Equatable {
     
     
-    var bookingId: Int?
+    var bookingId: ReturnedId?
     let listingId: Int
     let userId: Int
     let listedBy: String
