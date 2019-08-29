@@ -9,6 +9,15 @@
 import UIKit
 
 class AccountViewController: UIViewController {
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if userController.token == nil {
+            
+            performSegue(withIdentifier: "LoginSegue", sender: self)
+        }
+    }
 
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
@@ -29,21 +38,20 @@ class AccountViewController: UIViewController {
         let landowner = landownerSwitch.isOn
         //TODO: Call API Update user, if successful, refresh screen
     }
-    
+
     func updateViews() {
-        usernameLabel.text = userController.loggedInUser?.username ?? ""
-        passwordLabel.text = userController.loggedInUser?.password ?? ""
+        usernameLabel.text = userController.loggedInUser?.username
         landownerSwitch.isOn = userController.loggedInUser?.landowner ?? false
     }
-    
+
     /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//    }
+//    */
 
 }

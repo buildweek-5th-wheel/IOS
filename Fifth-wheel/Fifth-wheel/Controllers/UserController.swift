@@ -11,9 +11,10 @@ import Foundation
 class UserController {
     
     //Properties
-    var loggedInUser: User?
     var userListings: [Listing] = []
     var users: [User] = []
+    var token: Bearer?
+    var loggedInUser: LogginUser?
     
     private var userInfo: URL? {
         let fileManager = FileManager.default
@@ -28,32 +29,29 @@ class UserController {
 extension UserController {
     
     func createUser(username: String, password: String, landowner: Bool) {
-        let user = User(username: username, password: password, landowner: landowner)
-        loggedInUser = user
-        saveUser()
+        _ = User(username: username, password: password, landowner: landowner)
+        saveTokenAndUsername()
     }
     
-    func updateUser(password: String?, landowner: Bool?, bio: String?, image: String?) {
-        guard let password = password,
-            let landowner = landowner,
-            let bio = bio,
-            let image = image else {return}
-        loggedInUser?.password = password
-        loggedInUser?.bio = bio
-        loggedInUser?.landowner = landowner
-        loggedInUser?.imageURL = image
-        saveUser()
-    }
+//    func updateUser(password: String?, landowner: Bool?, bio: String?, image: String?) {
+//        guard let password = password,
+//            let landowner = landowner,
+//            let bio = bio,
+//            let image = image else {return}
+//        saveUser()
+//    }
 }
 
 //Data functions
 extension UserController {
     
-    func saveUser(){
+    func saveTokenAndUsername(){
         guard let url = userInfo else {return print("Url not created in directory")}
         do {
-            let user = try PropertyListEncoder().encode(self.loggedInUser)
-            try user.write(to: url)
+            let token = try PropertyListEncoder().encode(self.token)
+            try token.write(to: url)
+            let logginUser = try PropertyListEncoder().encode(self.loggedInUser)
+            try logginUser.write(to: url)
         } catch {
             NSLog("Error user data: \(error) ")
         }
@@ -64,7 +62,10 @@ extension UserController {
 //MARK: - Network Login and Signup
 extension UserController {
     
-    func signUp(with user: User, completion: @escaping (Error?) -> Void) {
+    func signUp(username: String, password: String, landowner: Bool, completion: @escaping (Error?) -> Void) {
+        let user = User(username: username, password: password, landowner: false)
+        loggedInUser?.username = username
+        loggedInUser?.landowner = landowner
         let appendedURL = baseURL.appendingPathComponent("auth/register")
         var request = URLRequest(url: appendedURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -79,7 +80,7 @@ extension UserController {
         }
         URLSession.shared.dataTask(with: request) { (_, response, error) in
             if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
+                response.statusCode != 201 {
                 completion(NetworkError.failedSignUp(NSError(domain: baseURL.absoluteString, code: response.statusCode, userInfo: nil)))
                 return
             }
@@ -91,7 +92,8 @@ extension UserController {
             }.resume()
     }
     //Get Token
-    func signIn(with user: User, completion: @escaping (Error?) -> Void) {
+    func signIn(username: String, password: String, completion: @escaping (Error?) -> Void) {
+        let user = User(username: username, password: password, landowner: false)
         let appendedURL = baseURL.appendingPathComponent("auth/login")
         var request = URLRequest(url: appendedURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -116,8 +118,8 @@ extension UserController {
             }
             guard let data = data else { completion(NetworkError.invalidData); return}
             do {
-                self.loggedInUser?.token = try JSONDecoder().decode(Bearer.self, from: data)
-                self.saveUser()
+                self.token = try JSONDecoder().decode(Bearer.self, from: data)
+                self.saveTokenAndUsername()
             } catch {
                 NSLog("UserController: Error decoding bearer token: \(error)")
                 completion(NetworkError.noDecode)
@@ -132,7 +134,7 @@ extension UserController {
 extension UserController {
     
     func getAllUsers(completion: @escaping (NetworkError?) -> Void) {
-        guard let token = loggedInUser?.token else {
+        guard let token = token else {
             completion(.badAuth)
             return
         }

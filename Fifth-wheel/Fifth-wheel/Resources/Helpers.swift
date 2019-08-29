@@ -14,6 +14,11 @@ let listingController = ListingController()
 struct ReturnedId: Codable, Equatable {
     let listingId: Int?
     let id: Int?
+    
+    static func == (lhs: ReturnedId, rhs: ReturnedId) -> Bool {
+        return lhs.listingId == rhs.listingId &&
+               lhs.id == rhs.id
+    }
 }
 
 

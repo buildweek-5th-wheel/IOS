@@ -10,13 +10,14 @@ import Foundation
 
 class Listing: Codable, Equatable {
     
-    var listingId: ReturnedId?
-    var userId: ReturnedId?
+    var listingId: Int?
+    var userId: Int?
     var listingName: String
     var description: String
     var imageUrl: String?
+    var address: String?
     
-    init(userId: ReturnedId, listingName: String, description: String) {
+    init(userId: Int, listingName: String, description: String) {
         self.userId = userId
         self.listingName = listingName
         self.description = description

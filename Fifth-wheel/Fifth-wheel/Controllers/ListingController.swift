@@ -17,7 +17,7 @@ class ListingController {
     func getListingImageUrl (byId listingId: Int) -> String {
         var result: String = ""
         for listing in self.allListings {
-            if let id = listing.listingId?.listingId {
+            if let id = listing.listingId {
                 if id == listingId {
                     if let imageUrl = listing.imageUrl {
                         result = imageUrl
@@ -30,7 +30,7 @@ class ListingController {
     
     func getListing (withId listingId: Int) -> Listing? {
         for listing in self.allListings {
-            if let id = listing.listingId?.listingId {
+            if let id = listing.listingId {
                 if id == listingId {
                     return listing
                 }
@@ -43,10 +43,10 @@ class ListingController {
 //MARK: - CRUD
 extension ListingController {
     
-    func createListing(userID: ReturnedId, listingName: String, description: String) {
-        guard let id = userID.id else {return print("No user ID")}
-        let newListing = Listing(userId: userID, listingName: listingName, description: description)
-        postNetworkListing(listing: newListing, userID: id)
+    func createListing(tokenID: Int, listingName: String, description: String) {
+        //let id = userID
+        let newListing = Listing(userId: tokenID, listingName: listingName, description: description)
+        postNetworkListing(listing: newListing, tokenID: tokenID)
         userListings.append(newListing)
     }
     
@@ -67,8 +67,8 @@ extension ListingController {
 //MARK: - Network Functions
 extension ListingController {
     
-    func postNetworkListing (listing: Listing, userID: Int, completion: @escaping (NetworkError?) -> Void = { _ in}) {
-        guard let token = userController.loggedInUser?.token else {
+    func postNetworkListing (listing: Listing, tokenID: Int, completion: @escaping (NetworkError?) -> Void = { _ in}) {
+        guard let token = userController.token?.token else {
             completion(.badAuth)
             return
         }
@@ -89,7 +89,7 @@ extension ListingController {
             return
         }
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+        URLSession.shared.dataTask(with: request) { (_, response, error) in
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 201 {
                 completion(NetworkError.failedPost(NSError(domain: baseURL.absoluteString, code: response.statusCode, userInfo: nil)))
@@ -99,15 +99,6 @@ extension ListingController {
             if let error = error {
                 NSLog("ListingController: postNetworkingListing error: \(error)")
                 completion(.noEncode)
-                return
-            }
-            guard let data = data else {completion(NetworkError.invalidData); return}
-            
-            do {
-                listing.listingId = try decoder.decode(ReturnedId.self, from: data)
-            } catch {
-                NSLog("ListingController: Error adding listingID: \(error)")
-                completion(NetworkError.noIDReturned)
                 return
             }
             completion(nil)
@@ -148,7 +139,7 @@ extension ListingController {
     }
     
     func deleteNetworkListing(listing: Listing, completion: @escaping (NetworkError?) -> Void = { _ in}) {
-        guard let token = userController.loggedInUser?.token else {
+        guard let token = userController.token?.token else {
             completion(.badAuth)
             return
         }
@@ -172,7 +163,7 @@ extension ListingController {
     }
     
     func updateNetworkListing(listing: Listing, completion: @escaping (NetworkError?) -> Void = { _ in}) {
-        guard let token = userController.loggedInUser?.token else {
+        guard let token = userController.token?.token else {
             completion(.badAuth)
             return
         }

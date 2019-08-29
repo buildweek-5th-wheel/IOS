@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a9N-LM-Ndb">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -124,12 +124,11 @@ In</string>
                         <outlet property="signInButton" destination="1Xe-IT-eKH" id="Q4B-XZ-iLL"/>
                         <outlet property="signUpButton" destination="GZT-Ya-9rR" id="yDQ-qe-w0g"/>
                         <outlet property="usernameTextField" destination="rEK-8z-JHc" id="Dus-5s-8eG"/>
-                        <segue destination="a9N-LM-Ndb" kind="show" identifier="TabBarSegue" id="zQy-4w-c4T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="-72"/>
+            <point key="canvasLocation" x="396" y="-27"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AMH-Yn-bgN">
@@ -188,6 +187,9 @@ In</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Bookings" id="pUP-24-WR8"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="LoginSegue" id="Hrv-FY-v8z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZND-x7-tta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -680,6 +682,7 @@ In</string>
                         <outlet property="passwordTextField" destination="l2r-FO-CDP" id="In1-7I-lZ0"/>
                         <outlet property="usernameLabel" destination="lBc-C5-gYh" id="fsl-RL-0l0"/>
                         <outlet property="usernameTextField" destination="nXO-4O-ga9" id="epW-34-qEJ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="LoginSegue" id="g2F-mZ-ifb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbq-sk-FTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -699,6 +702,7 @@ In</string>
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="FH1-vS-bYN" kind="relationship" relationship="rootViewController" id="T2n-1X-AUQ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="LoginSegue" id="8G0-UN-FJA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nR2-gc-aNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -755,11 +759,12 @@ In</string>
         <image name="grass" width="500" height="150"/>
         <image name="icons mobile home " width="88" height="70"/>
         <image name="icons8-account-100" width="36" height="39"/>
-        <image name="icons8-booking-50" width="16" height="16"/>
+        <image name="icons8-booking-50" width="16.666666030883789" height="16.666666030883789"/>
         <image name="icons8-mobile-home-250" width="44" height="36"/>
         <image name="rectangle" width="500" height="627"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cOD-ED-dF4"/>
+        <segue reference="g2F-mZ-ifb"/>
     </inferredMetricsTieBreakers>
 </document>
