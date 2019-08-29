@@ -7,23 +7,34 @@
 //
 
 import Foundation
+//CodingKey
+
 
 class Booking: Codable, Equatable {
     
+    enum CodingKeys: String, CodingKey {
+        case bookingId = "booking_id"
+        case listingId = "listing_id"
+        case userId = "user_id"
+        case listedBy
+        case startDate
+        case stopDate
+        
+    }
     
     var bookingId: ReturnedId?
     let listingId: Int
     let userId: Int
     let listedBy: String
     var startDate: Date
-    var endDate: Date
+    var stopDate: Date
     
     init(listingId: Int, userId: Int, startDate: Date, endDate: Date, listedBy: String) {
         
         self.listingId = listingId
         self.userId = userId
         self.startDate = startDate
-        self.endDate = endDate
+        self.stopDate = endDate
         self.listedBy = listedBy
     }
 }

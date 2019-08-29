@@ -16,6 +16,7 @@ struct ReturnedId: Codable, Equatable {
     let id: Int?
 }
 
+
 //Errors
 enum NetworkError: Error {
     case noData
