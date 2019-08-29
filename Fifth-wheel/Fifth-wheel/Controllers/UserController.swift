@@ -30,7 +30,7 @@ extension UserController {
     
     func createUser(username: String, password: String, landowner: Bool) {
         _ = User(username: username, password: password, landowner: landowner)
-        saveTokenAndUsername()
+        saveUsername()
     }
     
 //    func updateUser(password: String?, landowner: Bool?, bio: String?, image: String?) {
@@ -45,15 +45,53 @@ extension UserController {
 //Data functions
 extension UserController {
     
-    func saveTokenAndUsername(){
+    func saveToken(){
         guard let url = userInfo else {return print("Url not created in directory")}
         do {
             let newToken = try PropertyListEncoder().encode(token)
             try newToken.write(to: url)
+        } catch {
+            NSLog("Error saving username data: \(error) ")
+        }
+    }
+    
+    func saveUsername(){
+        guard let url = userInfo else {return print("Url not created in directory")}
+        do {
             let logginUser = try PropertyListEncoder().encode(self.loggedInUser)
             try logginUser.write(to: url)
         } catch {
-            NSLog("Error user data: \(error) ")
+            NSLog("Error saving username data: \(error) ")
+        }
+    }
+    
+    func loadToken() {
+        let fileManager = FileManager.default
+        guard let url = userInfo,
+            fileManager.fileExists(atPath: url.path) else { return }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = PropertyListDecoder()
+            let decodedtoken = try decoder.decode(Bearer.self, from: data)
+            token = decodedtoken
+        } catch {
+            NSLog("Error loading token data: \(error)")
+        }
+    }
+    
+    func loadUsername() {
+        let fileManager = FileManager.default
+        guard let url = userInfo,
+            fileManager.fileExists(atPath: url.path) else { return }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = PropertyListDecoder()
+            let decodedUser = try decoder.decode(LogginUser.self, from: data)
+            self.loggedInUser = decodedUser
+        } catch {
+            NSLog("Error loading username data: \(error)")
         }
     }
 }
@@ -119,13 +157,14 @@ extension UserController {
             guard let data = data else { completion(NetworkError.invalidData); return}
             do {
                 token = try JSONDecoder().decode(Bearer.self, from: data)
-                self.saveTokenAndUsername()
                 
             } catch {
                 NSLog("UserController: Error decoding bearer token: \(error)")
                 completion(NetworkError.noDecode)
                 return
             }
+            self.saveToken()
+            self.saveUsername()
             completion(nil)
             }.resume()
     }

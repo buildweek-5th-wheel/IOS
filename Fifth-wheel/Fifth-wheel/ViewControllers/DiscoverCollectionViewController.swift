@@ -14,6 +14,8 @@ class DiscoverCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        userController.loadToken()
+        userController.loadUsername()
         listingController.getAllNetworkListings { (error) in
             if let error = error {
                 NSLog("Error getting listings: \(error)")

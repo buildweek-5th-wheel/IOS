@@ -11,6 +11,15 @@ import UIKit
 private let reuseIdentifier = "ListingCell"
 
 class ListingsTableViewController: UITableViewController {
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        if token == nil {
+            performSegue(withIdentifier: "LoginSegue", sender: self)
+        } else {
+            return
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

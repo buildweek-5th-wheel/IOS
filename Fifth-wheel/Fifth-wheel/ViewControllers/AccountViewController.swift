@@ -13,7 +13,6 @@ class AccountViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
         if token == nil {
             performSegue(withIdentifier: "LoginSegue", sender: self)
         } else {
