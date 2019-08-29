@@ -23,7 +23,7 @@ class DiscoverCollectionViewController: UICollectionViewController {
                 }
             }
         }
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.register(ListingCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         
     }
@@ -52,7 +52,9 @@ class DiscoverCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ListingCollectionViewCell else { return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ListingCollectionViewCell else {
+            
+            fatalError("check for typos")}
         cell.listing = listingController.allListings[indexPath.item]
         return cell
     }
