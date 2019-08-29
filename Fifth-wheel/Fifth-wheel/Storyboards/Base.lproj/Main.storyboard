@@ -160,7 +160,7 @@ In</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="RUD-Rm-8II" style="IBUITableViewCellStyleDefault" id="qiY-7o-1lY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookingCell" textLabel="RUD-Rm-8II" style="IBUITableViewCellStyleDefault" id="qiY-7o-1lY" customClass="BookingTableViewCell" customModule="Fifth_wheel" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qiY-7o-1lY" id="g64-ec-oUQ">
@@ -177,6 +177,7 @@ In</string>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="titleLabel" destination="RUD-Rm-8II" id="BO3-0I-JnF"/>
                                     <segue destination="par-Wy-NnB" kind="show" id="mxw-vJ-zPI"/>
                                 </connections>
                             </tableViewCell>
@@ -243,6 +244,13 @@ In</string>
                         <color key="backgroundColor" red="0.58823529409999997" green="0.64705882349999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="bJg-eN-OwL"/>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="wlt-zO-l54" id="PnE-Te-Gfv"/>
+                        <outlet property="hostLabel" destination="Xhs-Hh-TOl" id="SvB-ec-7gu"/>
+                        <outlet property="imageView" destination="Tlu-Ud-D12" id="Acm-uE-48T"/>
+                        <outlet property="locationLabel" destination="cX3-RP-HpQ" id="xdF-5h-D9v"/>
+                        <outlet property="placeLabel" destination="V8L-lM-vKL" id="Uh1-wd-700"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hT7-ep-zDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -520,13 +528,19 @@ In</string>
                         <viewLayoutGuide key="safeArea" id="N1Z-c7-Wzz"/>
                     </view>
                     <navigationItem key="navigationItem" id="P2D-eb-mJV">
-                        <barButtonItem key="rightBarButtonItem" title="Book" id="Rjh-uW-5Kk"/>
+                        <barButtonItem key="rightBarButtonItem" title="Book" id="Rjh-uW-5Kk">
+                            <connections>
+                                <action selector="bookTapped:" destination="fCK-He-hFP" id="lNB-2R-zYy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="endDateTextField" destination="FPA-5Y-CqL" id="Wbm-K4-FNu"/>
                         <outlet property="hostLabel" destination="KSf-m0-3F7" id="FGu-Mx-WjC"/>
                         <outlet property="imageView" destination="sTr-wn-POa" id="xlJ-lx-4Ad"/>
                         <outlet property="locationLabel" destination="c0r-D3-LUg" id="ieV-88-sOr"/>
                         <outlet property="placenameLabel" destination="IDt-DU-6Pg" id="T7k-Uf-0aS"/>
+                        <outlet property="startDateTextField" destination="GNm-Oc-x0U" id="KzS-5m-yhE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iht-pW-xdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -649,6 +663,9 @@ In</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveTapped:" destination="Ywl-7R-9xj" eventType="touchUpInside" id="jGo-rd-7TL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.58823529409999997" green="0.64705882349999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -657,6 +674,13 @@ In</string>
                     <tabBarItem key="tabBarItem" title="Account" selectedImage="icons8-account-100" id="CEO-J1-Bl3">
                         <inset key="imageInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="landownerSwitch" destination="ZPY-Tl-GEA" id="D1O-Ev-1ur"/>
+                        <outlet property="passwordLabel" destination="0Kj-dg-uti" id="aDB-lc-oMt"/>
+                        <outlet property="passwordTextField" destination="l2r-FO-CDP" id="In1-7I-lZ0"/>
+                        <outlet property="usernameLabel" destination="lBc-C5-gYh" id="fsl-RL-0l0"/>
+                        <outlet property="usernameTextField" destination="nXO-4O-ga9" id="epW-34-qEJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fbq-sk-FTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

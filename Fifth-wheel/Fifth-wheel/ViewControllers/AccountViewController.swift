@@ -10,13 +10,32 @@ import UIKit
 
 class AccountViewController: UIViewController {
 
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var landownerSwitch: UISwitch!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func saveTapped(_ sender: Any) {
+        let username = usernameTextField.text
+        let password = passwordTextField.text
+        let landowner = landownerSwitch.isOn
+        //TODO: Call API Update user, if successful, refresh screen
+    }
+    
+    func updateViews() {
+        usernameLabel.text = userController.loggedInUser?.username ?? ""
+        passwordLabel.text = userController.loggedInUser?.password ?? ""
+        landownerSwitch.isOn = userController.loggedInUser?.landowner ?? false
+    }
+    
     /*
     // MARK: - Navigation
 
