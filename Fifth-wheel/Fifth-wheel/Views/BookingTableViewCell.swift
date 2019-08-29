@@ -21,7 +21,7 @@ class BookingTableViewCell: UITableViewCell {
     func updateViews() {
         guard let listedBy = booking?.listedBy,
             let startDate = booking?.startDate,
-            let endDate = booking?.endDate else {
+            let endDate = booking?.stopDate else {
                 titleLabel.text = "Error"
                 return
         }

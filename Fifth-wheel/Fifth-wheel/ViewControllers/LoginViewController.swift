@@ -38,8 +38,12 @@ class LoginViewController: UIViewController {
         print (buttonLabel.text ?? "N/A")
         guard let username = usernameTextField.text,
                 let password = passwordTextField.text else {return}
-        let user = User(username: username, password: password)
-        
+        //let user = User(username: username, password: password)
+        /*
+         committed out the above line becasue that is not the correct way to create a new user. A new user must be created through the createUser function so then that user can be referenced throughout the app.
+        */
+        userController.createUser(username: username, password: password, landowner: false)
+        guard let user = userController.loggedInUser else {return print("No loggedInUser in UserController")}
         
         switch buttonLabel.text {
         case "Sign In":

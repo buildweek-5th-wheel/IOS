@@ -35,7 +35,7 @@ class BookingDetailViewController: UIViewController {
             locationLabel.text = location
         }
         hostLabel.text = booking.listedBy
-        dateLabel.text = "\(booking.startDate) - \(booking.endDate)"
+        dateLabel.text = "\(booking.startDate) - \(booking.stopDate)"
     }
     
     /*
