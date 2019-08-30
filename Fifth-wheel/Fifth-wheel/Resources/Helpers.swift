@@ -7,11 +7,12 @@
 //
 
 import Foundation
-//Global Controllers
+//Global Properties
 let userController = UserController()
 let listingController = ListingController()
 var token: Bearer?
 var loggedInUser: LogginUser?
+var listing: Listing?
 
 struct ReturnedId: Codable, Equatable {
     let listingId: Int?

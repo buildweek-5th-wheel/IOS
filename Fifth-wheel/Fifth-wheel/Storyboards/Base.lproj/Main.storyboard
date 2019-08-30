@@ -377,7 +377,7 @@ In</string>
         <!--Discover-->
         <scene sceneID="H49-TC-jMT">
             <objects>
-                <collectionViewController id="Nxp-hg-uxW" customClass="DiscoverCollectionViewController" customModule="Fifth_wheel" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="DiscoverCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nxp-hg-uxW" customClass="DiscoverCollectionViewController" customModule="Fifth_wheel" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="IAa-0Q-aqI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -461,7 +461,7 @@ In</string>
                                     <outlet property="descriptionLabel" destination="qi5-0I-Bys" id="u21-ZB-bX7"/>
                                     <outlet property="imageView" destination="txw-Je-W53" id="qdz-6a-ABg"/>
                                     <outlet property="nameLabel" destination="f5W-vk-HIZ" id="jNo-Q1-Wbw"/>
-                                    <segue destination="FP0-Jr-gJX" kind="show" id="fXy-ch-PfQ"/>
+                                    <segue destination="FP0-Jr-gJX" kind="show" identifier="ListingCellSegue" id="fXy-ch-PfQ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -482,7 +482,7 @@ In</string>
         <!--Listing Book Detail View Controller-->
         <scene sceneID="mL6-xq-1e7">
             <objects>
-                <viewController id="fCK-He-hFP" customClass="ListingBookDetailViewController" customModule="Fifth_wheel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListingBookDetailViewController" id="fCK-He-hFP" customClass="ListingBookDetailViewController" customModule="Fifth_wheel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vyO-Wg-g3F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -552,6 +552,7 @@ In</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bookButton" destination="Rjh-uW-5Kk" id="8SC-Zv-Ku0"/>
                         <outlet property="endDateTextField" destination="FPA-5Y-CqL" id="Wbm-K4-FNu"/>
                         <outlet property="hostLabel" destination="KSf-m0-3F7" id="FGu-Mx-WjC"/>
                         <outlet property="imageView" destination="sTr-wn-POa" id="xlJ-lx-4Ad"/>
@@ -779,6 +780,6 @@ In</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cOD-ED-dF4"/>
-        <segue reference="g2F-mZ-ifb"/>
+        <segue reference="8G0-UN-FJA"/>
     </inferredMetricsTieBreakers>
 </document>

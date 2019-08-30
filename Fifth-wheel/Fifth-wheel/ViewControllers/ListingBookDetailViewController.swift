@@ -9,9 +9,11 @@
 import UIKit
 
 class ListingBookDetailViewController: UIViewController {
-    var listing: Listing?
+    var listingController: ListingController?
+    var userController: UserController?
     var delegate: ListingManagerDelegate?
     
+    @IBOutlet weak var bookButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var placenameLabel: UILabel!
     @IBOutlet weak var hostLabel: UILabel!
@@ -43,6 +45,7 @@ class ListingBookDetailViewController: UIViewController {
     @IBAction func bookTapped(_ sender: Any) {
         guard let startDate = startDateTextField.text,
             let endDate = endDateTextField.text else { return }
+        
         
         //TODO: write code to book listing, return success or failure, seque back
     }

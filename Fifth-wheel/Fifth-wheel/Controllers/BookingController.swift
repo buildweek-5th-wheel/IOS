@@ -35,7 +35,7 @@ class BookingController {
 //extension BookingController {
 //
 //    func postNetworkBooking (booking: Booking, completion: @escaping (NetworkError?) -> Void = { _ in}) {
-//        guard let token = userController.loggedInUser?.token else {
+//        guard let currentToken = token else {
 //            completion(.badAuth)
 //            return
 //        }
@@ -44,7 +44,7 @@ class BookingController {
 //        let postBookingURL = baseURL.appendingPathComponent("listings").appendingPathComponent(String(describing: booking.listingId)).appendingPathComponent("booking")
 //        var request = URLRequest(url: postBookingURL)
 //        request.httpMethod = HTTPMethod.post.rawValue
-//        request.addValue("\(token)", forHTTPHeaderField: "token")
+//        request.addValue("\(currentToken)", forHTTPHeaderField: "token")
 //
 //        do {
 //            request.httpBody = try encoder.encode(booking)
@@ -103,4 +103,4 @@ class BookingController {
 //            completion(nil)
 //            }.resume()
 //    }
- 
+
