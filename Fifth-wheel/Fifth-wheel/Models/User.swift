@@ -34,5 +34,4 @@ struct Bearer: Codable {
 
 struct LogginUser: Codable {
     var username: String
-    var landowner: Bool
 }

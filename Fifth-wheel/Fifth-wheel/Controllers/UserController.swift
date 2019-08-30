@@ -21,6 +21,11 @@ class UserController {
         guard let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else    { return nil }
         return documentsDirectory.appendingPathComponent("fillout.plist")
     }
+    private var userDetail: URL? {
+        let fileManager = FileManager.default
+        guard let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else    { return nil }
+        return documentsDirectory.appendingPathComponent("fillin.plist")
+    }
     
     
 }
@@ -56,7 +61,7 @@ extension UserController {
     }
     
     func saveUsername(){
-        guard let url = userInfo else {return print("Url not created in directory")}
+        guard let url = userDetail else {return print("Url not created in directory")}
         do {
             let logginUser = try PropertyListEncoder().encode(loggedInUser)
             try logginUser.write(to: url)
@@ -103,7 +108,6 @@ extension UserController {
     func signUp(username: String, password: String, landowner: Bool, completion: @escaping (Error?) -> Void) {
         let user = User(username: username, password: password, landowner: false)
         loggedInUser?.username = username
-        loggedInUser?.landowner = landowner
         let appendedURL = baseURL.appendingPathComponent("auth/register")
         var request = URLRequest(url: appendedURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -133,7 +137,6 @@ extension UserController {
     func signIn(username: String, password: String, completion: @escaping (Error?) -> Void) {
         let user = User(username: username, password: password, landowner: false)
         loggedInUser?.username = username
-        loggedInUser?.landowner = false
         let appendedURL = baseURL.appendingPathComponent("auth/login")
         var request = URLRequest(url: appendedURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -174,6 +177,41 @@ extension UserController {
 
 //MARK: - Network Route Calls
 extension UserController {
+    
+    func getUserListings(token: Bearer, completion: @escaping (NetworkError?) -> Void) {
+        
+        let userListingUrl = baseURL.appendingPathComponent("users").appendingPathComponent(String(token.id))
+        var request = URLRequest(url: userListingUrl)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.addValue("\(token)", forHTTPHeaderField: "token")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(.otherError(NSError()))
+                return
+            }
+            if let error = error {
+                completion(.otherError(error))
+                return
+            }
+            guard let data = data else {
+                completion(.noData)
+                return
+            }
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                self.userListings = try decoder.decode([Listing].self, from: data)
+                completion(nil)
+            } catch {
+                completion(.otherError(error))
+                return
+            }
+            completion(nil)
+            }.resume()
+    
+    }
     
     func getAllUsers(completion: @escaping (NetworkError?) -> Void) {
         guard let token = token else {

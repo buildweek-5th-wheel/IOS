@@ -23,6 +23,16 @@ class ListingsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        listingController.getAllNetworkListings { (error) in
+            if let error = error {
+                NSLog("Error loading listings: \(error)")
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -45,7 +55,7 @@ class ListingsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? ListingTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListingCell", for: indexPath) as? ListingTableViewCell else { return UITableViewCell()}
         cell.listing = listingController.allListings[indexPath.item]
         return cell
     }
@@ -56,23 +66,19 @@ class ListingsTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//     In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let segue.identifier == "DetailListing" {
+            guard let detailVC = segue.destination as? ListingDetailViewController else {return}
+            
+            
+        }
 
-//        guard let vc = segue.destination as? ListingDetailViewController else { return }
-//        switch segue.identifier {
-//        case "AddListing":
-//            vc.delegate = self
-//        case "DetailListing":
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                vc.listing = listingController.allListings[indexPath.item]
-//                vc.delegate = self
-//            }
-//        default:
-//            break
-//        }
-//    }
-//
+        guard let vc = segue.destination as? ListingDetailViewController else { return }
+        
+    }
+
 }
 
 extension ListingsTableViewController: ListingManagerDelegate {

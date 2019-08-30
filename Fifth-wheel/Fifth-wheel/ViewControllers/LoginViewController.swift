@@ -43,6 +43,7 @@ class LoginViewController: UIViewController {
          committed out the above line becasue that is not the correct way to create a new user. A new user must be created through the createUser function so then that user can be referenced throughout the app.
          */
         userController.createUser(username: username, password: password, landowner: false)
+        loggedInUser?.username = username
         
         if buttonLabel.text == "Sign In" {
             userController.signIn(username: username, password: password, completion: { (error) in

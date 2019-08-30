@@ -17,6 +17,15 @@ class ListingDetailViewController: UIViewController {
     @IBOutlet weak var hostLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        if token == nil {
+            performSegue(withIdentifier: "LoginSegue", sender: self)
+        } else {
+            return
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
