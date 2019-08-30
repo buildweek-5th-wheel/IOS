@@ -433,6 +433,10 @@ In</string>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="txw-Je-W53">
+                                                    <rect key="frame" x="20" y="8" width="328" height="204"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -455,6 +459,7 @@ In</string>
                                 </constraints>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="qi5-0I-Bys" id="u21-ZB-bX7"/>
+                                    <outlet property="imageView" destination="txw-Je-W53" id="qdz-6a-ABg"/>
                                     <outlet property="nameLabel" destination="f5W-vk-HIZ" id="jNo-Q1-Wbw"/>
                                     <segue destination="FP0-Jr-gJX" kind="show" id="fXy-ch-PfQ"/>
                                 </connections>

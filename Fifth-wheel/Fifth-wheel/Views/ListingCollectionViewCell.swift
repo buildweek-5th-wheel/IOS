@@ -10,7 +10,7 @@ import UIKit
 
 class ListingCollectionViewCell: UICollectionViewCell {
     
-    //@IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
@@ -23,12 +23,12 @@ class ListingCollectionViewCell: UICollectionViewCell {
     
     
     func updateViews() {
-        //guard let imageURL = listing?.imageUrl else {return print("No Image url")}
-//        if imageURL != "" {
-//            imageView.downloaded(from: imageURL)
-//        } else {
-//            imageView.image = UIImage(named: "GenericCamping")
-//        }
+        guard let imageURL = listing?.imageUrl else {return print("No Image url")}
+        if imageURL != "" {
+            imageView.downloaded(from: imageURL)
+        } else {
+            imageView.image = UIImage(named: "GenericCamping")
+        }
         let name = listing?.listingName
         nameLabel.text = name
         let description = listing?.description
