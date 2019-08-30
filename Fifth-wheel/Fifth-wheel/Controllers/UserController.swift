@@ -178,12 +178,11 @@ extension UserController {
 //MARK: - Network Route Calls
 extension UserController {
     
-    func getUserListings(token: Bearer, completion: @escaping (NetworkError?) -> Void) {
+    func getAllUserListings(completion: @escaping (NetworkError?) -> Void = { _ in})  {
         
-        let userListingUrl = baseURL.appendingPathComponent("users").appendingPathComponent(String(token.id))
-        var request = URLRequest(url: userListingUrl)
+        let allUserListingUrl = baseURL.appendingPathComponent("user").appendingPathComponent(String(token!.id))
+        var request = URLRequest(url: allUserListingUrl)
         request.httpMethod = HTTPMethod.get.rawValue
-        request.addValue("\(token)", forHTTPHeaderField: "token")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let response = response as? HTTPURLResponse,
@@ -210,7 +209,6 @@ extension UserController {
             }
             completion(nil)
             }.resume()
-    
     }
     
     func getAllUsers(completion: @escaping (NetworkError?) -> Void) {
