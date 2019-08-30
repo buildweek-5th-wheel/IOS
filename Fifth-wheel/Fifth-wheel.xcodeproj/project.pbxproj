@@ -31,6 +31,7 @@
 		F65528A02314B297002C2B1C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F655289F2314B297002C2B1C /* Helpers.swift */; };
 		F65528A22315F74D002C2B1C /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65528A12315F74D002C2B1C /* Booking.swift */; };
 		F657646423172A6E0083ED61 /* BookingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F657646323172A6E0083ED61 /* BookingController.swift */; };
+		F65764662318F4B00083ED61 /* SetDatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65764652318F4B00083ED61 /* SetDatesViewController.swift */; };
 		F65C45982316230A00606A34 /* ListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65C45972316230A00606A34 /* ListingController.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		F655289F2314B297002C2B1C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		F65528A12315F74D002C2B1C /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		F657646323172A6E0083ED61 /* BookingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingController.swift; sourceTree = "<group>"; };
+		F65764652318F4B00083ED61 /* SetDatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDatesViewController.swift; sourceTree = "<group>"; };
 		F65C45972316230A00606A34 /* ListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListingController.swift; path = "Fifth-wheel/Controllers/ListingController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 				E04F21D82316C20A00FB96B2 /* ListingsTableViewController.swift */,
 				E07BE85723175D5300BCC82F /* BookingDetailViewController.swift */,
 				E07BE85923175D8800BCC82F /* BookingTableViewController.swift */,
+				F65764652318F4B00083ED61 /* SetDatesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				F65528A22315F74D002C2B1C /* Booking.swift in Sources */,
 				F65528A02314B297002C2B1C /* Helpers.swift in Sources */,
 				E07BE85C23175EDF00BCC82F /* ListingBookDetailViewController.swift in Sources */,
+				F65764662318F4B00083ED61 /* SetDatesViewController.swift in Sources */,
 				E00137B3231756DD00A252A9 /* UIImageView.swift in Sources */,
 				E03343EE23144C6C0051518B /* User.swift in Sources */,
 				E04F21D323162D4E00FB96B2 /* DiscoverCollectionViewController.swift in Sources */,

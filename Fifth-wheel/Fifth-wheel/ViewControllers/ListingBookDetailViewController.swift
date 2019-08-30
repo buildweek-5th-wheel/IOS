@@ -15,11 +15,9 @@ class ListingBookDetailViewController: UIViewController {
     
     @IBOutlet weak var bookButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var placenameLabel: UILabel!
     @IBOutlet weak var hostLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var startDateTextField: UITextField!
-    @IBOutlet weak var endDateTextField: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +33,7 @@ class ListingBookDetailViewController: UIViewController {
                 imageView.image = UIImage(named: "GenericCamping")
             }
             let name = listing.listingName
-            placenameLabel.text = name
+            navigationController?.title = name
             let description = listing.description
             locationLabel.text = description
             //TODO: Do listing user name lookup and display
