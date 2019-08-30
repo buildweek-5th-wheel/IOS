@@ -42,8 +42,8 @@
                                 <rect key="frame" x="265" y="425" width="195" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo-stacked-blue" translatesAutoresizingMaskIntoConstraints="NO" id="7gX-lj-KUO">
-                                <rect key="frame" x="-1" y="634" width="415" height="196"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo-stacked-black" translatesAutoresizingMaskIntoConstraints="NO" id="4nh-XE-1WW">
+                                <rect key="frame" x="-1" y="61" width="152" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -62,7 +62,7 @@
         <image name="Trees" width="500" height="344"/>
         <image name="Truck" width="500" height="726"/>
         <image name="grass" width="500" height="150"/>
-        <image name="logo-stacked-blue" width="100" height="79"/>
+        <image name="logo-stacked-black" width="500" height="395"/>
         <image name="road" width="500" height="46"/>
     </resources>
 </document>
