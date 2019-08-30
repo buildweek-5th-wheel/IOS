@@ -11,6 +11,7 @@ import Foundation
 let userController = UserController()
 let listingController = ListingController()
 var token: Bearer?
+var loggedInUser: LogginUser?
 
 struct ReturnedId: Codable, Equatable {
     let listingId: Int?

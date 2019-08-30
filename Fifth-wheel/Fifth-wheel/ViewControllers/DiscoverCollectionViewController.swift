@@ -11,6 +11,8 @@ import UIKit
 private let reuseIdentifier = "ListingCell"
 
 class DiscoverCollectionViewController: UICollectionViewController {
+    
+    let userController = UserController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +27,6 @@ class DiscoverCollectionViewController: UICollectionViewController {
                 }
             }
         }
-        self.collectionView.register(ListingCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        
     }
 
     /*

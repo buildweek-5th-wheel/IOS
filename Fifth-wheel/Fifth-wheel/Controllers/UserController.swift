@@ -13,8 +13,8 @@ class UserController {
     //Properties
     var userListings: [Listing] = []
     var users: [User] = []
-    //var token: Bearer?
-    var loggedInUser: LogginUser?
+
+    
     
     private var userInfo: URL? {
         let fileManager = FileManager.default
@@ -58,7 +58,7 @@ extension UserController {
     func saveUsername(){
         guard let url = userInfo else {return print("Url not created in directory")}
         do {
-            let logginUser = try PropertyListEncoder().encode(self.loggedInUser)
+            let logginUser = try PropertyListEncoder().encode(loggedInUser)
             try logginUser.write(to: url)
         } catch {
             NSLog("Error saving username data: \(error) ")
@@ -89,7 +89,7 @@ extension UserController {
             let data = try Data(contentsOf: url)
             let decoder = PropertyListDecoder()
             let decodedUser = try decoder.decode(LogginUser.self, from: data)
-            self.loggedInUser = decodedUser
+            loggedInUser = decodedUser
         } catch {
             NSLog("Error loading username data: \(error)")
         }
@@ -132,6 +132,8 @@ extension UserController {
     //Get Token
     func signIn(username: String, password: String, completion: @escaping (Error?) -> Void) {
         let user = User(username: username, password: password, landowner: false)
+        loggedInUser?.username = username
+        loggedInUser?.landowner = false
         let appendedURL = baseURL.appendingPathComponent("auth/login")
         var request = URLRequest(url: appendedURL)
         request.httpMethod = HTTPMethod.post.rawValue

@@ -41,8 +41,8 @@ class AccountViewController: UIViewController {
     }
 
     func updateViews() {
-        usernameLabel.text = userController.loggedInUser?.username
-        landownerSwitch.isOn = userController.loggedInUser?.landowner ?? false
+        usernameLabel.text = loggedInUser?.username
+        //landownerSwitch.isOn = loggedInUser?.landowner
     }
 
     /*
