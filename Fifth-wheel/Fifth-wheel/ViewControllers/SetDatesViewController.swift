@@ -9,7 +9,10 @@
 import UIKit
 
 class SetDatesViewController: UIViewController {
-
+    //Properties
+    @IBOutlet weak var checkInDatePicker: UIDatePicker!
+    @IBOutlet weak var checkOutDatePicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +20,13 @@ class SetDatesViewController: UIViewController {
     }
     
 
+    @IBAction func dateSetButton(_ sender: Any) {
+        checkInDate = checkInDatePicker.date
+        checkOutDate = checkOutDatePicker.date
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     /*
     // MARK: - Navigation
 

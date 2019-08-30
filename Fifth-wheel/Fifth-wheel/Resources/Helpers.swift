@@ -13,6 +13,8 @@ let listingController = ListingController()
 var token: Bearer?
 var loggedInUser: LogginUser?
 var listing: Listing?
+var checkInDate: Date?
+var checkOutDate: Date?
 
 struct ReturnedId: Codable, Equatable {
     let listingId: Int?

@@ -5,7 +5,7 @@
 //  Created by Joshua Sharp on 8/27/19.
 //  Copyright © 2019 Lambda. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class ListingBookDetailViewController: UIViewController {
@@ -13,17 +13,23 @@ class ListingBookDetailViewController: UIViewController {
     var userController: UserController?
     var delegate: ListingManagerDelegate?
     
-    @IBOutlet weak var bookButton: UIBarButtonItem!
-    @IBOutlet weak var imageView: UIImageView!
+    
     @IBOutlet weak var hostLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var checkOutDateLabel: UILabel!
+    @IBOutlet weak var checkInDateLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var locationLabel: UILabel!
 
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         updateViews()
-        // Do any additional setup after loading the view.
     }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        updateViews()
+//        // Do any additional setup after loading the view.
+//    }
     
     func updateViews() {
         if let listing = listing {
@@ -32,21 +38,20 @@ class ListingBookDetailViewController: UIViewController {
             } else {
                 imageView.image = UIImage(named: "GenericCamping")
             }
+            checkInDateLabel.text = String(describing: checkInDate)
+            checkOutDateLabel.text = String(describing: checkOutDate)
             let name = listing.listingName
             navigationController?.title = name
-            let description = listing.description
-            locationLabel.text = description
+            descriptionTextView.text = listing.description
+            locationLabel.text = listing.address
             //TODO: Do listing user name lookup and display
         }
     }
     
     @IBAction func bookTapped(_ sender: Any) {
-        guard let startDate = startDateTextField.text,
-            let endDate = endDateTextField.text else { return }
-        
-        
         //TODO: write code to book listing, return success or failure, seque back
     }
+    
     
     /*
     // MARK: - Navigation

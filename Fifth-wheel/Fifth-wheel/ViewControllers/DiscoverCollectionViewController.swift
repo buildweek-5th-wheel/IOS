@@ -12,9 +12,19 @@ private let reuseIdentifier = "ListingCell"
 
 class DiscoverCollectionViewController: UICollectionViewController {
     
+    @IBOutlet weak var signInButton: UIBarButtonItem!
     let userController = UserController()
     let listingController = ListingController()
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if token != nil {
+            signInButton.title = "Sign Out"
+        } else {
+            signInButton.title = "Sign In"
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
