@@ -27,7 +27,7 @@ class BookingDetailViewController: UIViewController {
     
     func updateViews() {
         guard let booking = booking else { return }
-        let listing = listingController.getListing (withId: booking.listingId)
+        let listing = listingController.getListing (withId: booking.listingId!)
         if let imageUrl = listing?.imageUrl {
             imageView.downloaded(from:  imageUrl)
         }

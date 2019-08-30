@@ -34,9 +34,8 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
-        let username = usernameTextField.text
-        let password = passwordTextField.text
-        let landowner = landownerSwitch.isOn
+        
+        print("this")
         //TODO: Call API Update user, if successful, refresh screen
     }
 

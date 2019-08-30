@@ -22,20 +22,30 @@ class Booking: Codable, Equatable {
         
     }
     
-    var bookingId: ReturnedId?
-    let listingId: Int
-    let userId: Int
-    let listedBy: String
-    var startDate: Date
-    var stopDate: Date
+    var token: Bearer?
+    var bookingId: Int?
+    var listingId: Int?
+    var userId: Int?
+    var listedBy: String?
+    var startDate: String
+    var stopDate: String
     
-    init(listingId: Int, userId: Int, startDate: Date, endDate: Date, listedBy: String) {
-        
+    init(token: Bearer, startDate: String, endDate: String, listingId: Int) {
+        self.token = token
         self.listingId = listingId
-        self.userId = userId
         self.startDate = startDate
         self.stopDate = endDate
-        self.listedBy = listedBy
+    }
+}
+    
+    class BookingRequest: Codable {
+        let startDate: String
+        let stopDate: String
+        
+        init(startDate: String = checkInDate!, stopDate: String = checkOutDate!) {
+            self.startDate = startDate
+            self.stopDate = stopDate
+        
     }
 }
 

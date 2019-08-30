@@ -13,8 +13,9 @@ let listingController = ListingController()
 var token: Bearer?
 var loggedInUser: LogginUser?
 var listing: Listing?
-var checkInDate: Date?
-var checkOutDate: Date?
+var checkInDate: String?
+var checkOutDate: String?
+var bookingRequest = BookingRequest()
 
 struct ReturnedId: Codable, Equatable {
     let listingId: Int?
